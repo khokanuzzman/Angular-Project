@@ -1,0 +1,75 @@
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-3">
+      <div class="card bg-info pt-2">
+        <img src="/assets/khokan.jpg" class="p-1 card-img-top rounded-circle mx-auto d-block profile-img bg-light"
+          alt="profile picture">
+        <div class="card-body p-0">
+          <div class="text-center text-light card-header p-2 m-0">
+            Md khokanuzzaman
+          </div>
+          <p class="font-weight-lighter font-italic p-2 text-monospace"><small>Here i have developed Angular Test
+              Application for practice</small></p>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="#">Angular Random</a>
+            <span class="badge badge-primary badge-pill">14</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a routerLink="/crud" routerLinkActive="active">Angular Crud Application</a>
+            <span class="badge badge-primary badge-pill">2</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="#">API</a>
+            <span class="badge badge-primary badge-pill">1</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-8 bg-secondary">
+      <div class="row mt-2">
+        <div class="col">
+          <div class="card bg-secondary border-light mb-3" style="max-width: 10rem;">
+            <div class="card-header">Header <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+            </div>
+            <div class="card-body text-warning">
+              <h5 class="card-title">title</h5>
+              <p class="card-text">Some quick example</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-secondary border-light mb-3" style="max-width: 10rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body text-warning">
+              <h5 class="card-title">title</h5>
+              <p class="card-text">Some quick example</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-secondary border-light mb-3" style="max-width: 10rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body text-warning">
+              <h5 class="card-title">title</h5>
+              <p class="card-text">Some quick example</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-secondary border-light mb-3" style="max-width: 10rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body text-warning">
+              <h5 class="card-title">title</h5>
+              <p class="card-text">Some quick example</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
