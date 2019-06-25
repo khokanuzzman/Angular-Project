@@ -1,35 +1,53 @@
-<div class="container-fluid mt-2">
+<div class="container mt-2">
   <div class="row">
-    <div class="col-3">
+    <div class="col-3" id="my-pro">
       <div class="card bg-info pt-2">
-        <span><i class="fas fa-bars"></i></span>
+        <div class="row">
+          <div class="col-3">
+            <span class="p-1 text-light"  data-toggle="collapse" data-target="#collapseProfile" aria-expanded="true" aria-controls="collapseProfile"><i class="fa fa-bars border-light"></i></span>
+          </div>
+          <div class="col-6">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item"><a href="#"><i class="fa fa-facebook-f text-light"></i></a></li>
+              <li class="list-inline-item"><a href="#"><i class="fa fa-twitter text-light"></i></a></li>
+              <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin text-light"></i></a></li>
+            </ul>
+          </div>
+          <div class="col-3">
+            <ul class="list-inline text-secondary">
+              <li class="list-inline-item"><a href="#"><span class="float-right text-dark"><i class="fa fa-info-circle"></i></span></a></li>
+            </ul>
+          </div>
+        </div>
         <img src="/assets/khokan.jpg" class="p-1 card-img-top rounded-circle mx-auto d-block profile-img bg-light"
           alt="profile picture">
-        <div class="card-body p-0">
-          <div class="text-center text-light card-header p-2 m-0"  data-toggle="collapse" data-target="#collapsName" aria-expanded="true">
-            Md khokanuzzaman
-          </div>
-          <p class="font-weight-lighter font-italic p-2 text-monospace collapse"  id="collapsName"><small>Here i have developed Angular Test
-              Application for practice</small></p>
+            <div class="card-body p-0">
+                <div class="text-center text-light card-header p-2 m-0"  data-toggle="collapse" data-target="#collapsName">
+                  <a class="btn btn-info border-light animated bounce"><span><i class="fa fa-male"></i></span> Md khokanuzzaman</a>
+                </div>
+                <p class="font-weight-lighter font-italic p-2 text-monospace collapse alert alert-info" role="alert" id="collapsName"><small>Here i have developed Angular Test
+                    Application for practice</small></p>
+              </div>
+              <div id="collapseProfile" class="collapse show" aria-labelledby="headingOne" data-parent="#my-pro">
+              <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a routerLink="/random" routerLinkActive="active">Angular Random</a>
+                  <span class="badge  text-info border-info border badge-pill animated infinite pulse delay-2s">14</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a routerLink="/crud" routerLinkActive="active">Angular Crud Application</a>
+                  <span class="badge border-info border text-info badge-pill animated infinite pulse delay-3s">2</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="#">API</a>
+                  <span class="badge text-info border-info border badge-pill animated infinite pulse delay-4s">1</span>
+                </li>
+              </ul>
         </div>
-        <ul class="list-group">
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a routerLink="/random" routerLinkActive="active">Angular Random</a>
-            <span class="badge badge-primary badge-pill">14</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a routerLink="/crud" routerLinkActive="active">Angular Crud Application</a>
-            <span class="badge badge-primary badge-pill">2</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="#">API</a>
-            <span class="badge badge-primary badge-pill">1</span>
-          </li>
-        </ul>
       </div>
     </div>
-    <div class="col-8 bg-secondary">
-      <div class="row mt-2">
+    <div class="col-9 bg-light border border-info">
+      <div class="row m-2 p-2">
         <router-outlet></router-outlet>
       </div>
     </div>
