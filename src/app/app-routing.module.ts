@@ -9,10 +9,10 @@ const routes: Routes = [
   { path: 'random',component: RandomPrjComponent },
   // { path: 'projects', component: ProjectsComponent },
   // { path: '',component: HomeComponent },
-  // { path: 'home',
-  //   redirectTo: '',
-  //   pathMatch: 'full'
-  // },
+   { path: 'home',
+     redirectTo: '',
+    pathMatch: 'full'
+   },
 ]
 
 
