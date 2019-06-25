@@ -2,12 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CrudComponent } from './components/crud/crud.component';
 import { RandomPrjComponent } from './components/random-prj/random-prj.component';
+import { CustomsComponent } from './components/customs/customs.component';
 
 
 const routes: Routes = [
   { path: 'crud', component: CrudComponent },
   { path: 'random',component: RandomPrjComponent },
-  // { path: 'projects', component: ProjectsComponent },
+  { path: 'customs', component: CustomsComponent },
   // { path: '',component: HomeComponent },
    { path: 'home',
      redirectTo: '',

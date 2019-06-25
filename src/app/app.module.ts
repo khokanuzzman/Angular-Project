@@ -7,6 +7,7 @@ import { CrudComponent } from './components/crud/crud.component';
 import { RandomPrjComponent } from './components/random-prj/random-prj.component';
 import { HomeComponent } from './components/home/home.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { CustomsComponent } from './components/customs/customs.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     CrudComponent,
     RandomPrjComponent,
     HomeComponent,
+    CustomsComponent,
     
   ],
   imports: [

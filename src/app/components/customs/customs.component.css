@@ -1,0 +1,14 @@
+div#open-modal{
+position: fixed;
+/* -webkit-transition: all .25s linear;
+-o-transition: all .25s linear;
+transition: all .25s linear;*/
+animation-duration: 1.5s;
+}
+
+#open-modal>div{
+    width: 100%;
+    position: absolute;
+    padding: 2em;
+}
+
