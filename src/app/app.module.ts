@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CrudComponent } from './components/crud/crud.component';
 import { RandomPrjComponent } from './components/random-prj/random-prj.component';
 import { HomeComponent } from './components/home/home.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { HomeComponent } from './components/home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent],
