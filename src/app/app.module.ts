@@ -13,13 +13,15 @@ import { HomeComponent } from './components/home/home.component';
     AppComponent,
     CrudComponent,
     RandomPrjComponent,
-    HomeComponent
+    HomeComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }
