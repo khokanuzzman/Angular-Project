@@ -8,8 +8,11 @@ declare let $: any;
 
 })
 export class RandomPrjComponent implements OnInit {
-
-  constructor() { }
+  public enabled:boolean =true;
+  public disabled:boolean=false;
+  public collapseIcon;
+  constructor() {    
+  }
 
   ngOnInit() {
       $( document ).ready(function() {
@@ -22,5 +25,15 @@ export class RandomPrjComponent implements OnInit {
         });
     });
   }
+
+  public changeIcon(){
+    this.enabled=false;
+    this.disabled =true;
+  }
+  name = 'Angular 5';
+  collapse:boolean =true;
+  collapseOne:boolean=true;
+  collapseTwo:boolean=true;
+  collapseThree:boolean=true;
 
 }

@@ -8,6 +8,9 @@ import { RandomPrjComponent } from './components/random-prj/random-prj.component
 import { HomeComponent } from './components/home/home.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { CustomsComponent } from './components/customs/customs.component';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { ParentComponent } from './components/parent/parent.component';
+import { ChildComponent } from './components/child/child.component';
 
 
 @NgModule({
@@ -17,6 +20,9 @@ import { CustomsComponent } from './components/customs/customs.component';
     RandomPrjComponent,
     HomeComponent,
     CustomsComponent,
+    NotFoundPageComponent,
+    ParentComponent,
+    ChildComponent,
     
   ],
   imports: [

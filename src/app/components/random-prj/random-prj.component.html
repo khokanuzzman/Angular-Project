@@ -1,90 +1,58 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col">
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-        Launch demo modal
-      </button>
-      <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-        Tooltip on top
-      </button>
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="card">
-                <img src="#" class="card-img-top">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <a routerLink="/crud" routerLinkActive="active"  class="btn btn-primary">View</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- popovers -->
-      <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title"
-        data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+<div class="row">
+  <div class="col-2">
 
-        <div class="accordion" id="accordionExample">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Collapsible Group Item #1
-                  </button>
-                </h2>
-              </div>
-          
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingTwo">
-                <h2 class="mb-0">
-                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Collapsible Group Item #2
-                  </button>
-                </h2>
-              </div>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingThree">
-                <h2 class="mb-0">
-                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Collapsible Group Item #3
-                  </button>
-                </h2>
-              </div>
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-          </div>
+  </div>
+  <div class="col-8">
+    <div class="text-center h5 p-2 bg-light text-monospace font-weight-light border border-info border-top-0">Angular
+      Random Projects</div>
+  </div>
+  <div class="col">
+  </div>
+</div>
+<div class="row mt-2">
+  <div class="col-4 text-center">
+    <div class="card" data-toggle="collapse" href="#collapseOne">
+      <div class="card-body">
+        <p data-toggle="collapse" href="#collapseOne" class="m-0"><a href="javascript:void(0);"
+            (click)="collapseOne=!collapseOne">Component Interaction<i class="fa ml-1"
+              [ngClass]="{'fa-plus-square': collapse, 'fa-minus-square': !collapse}"
+              [ngClass]="{'fa-plus-square': collapseOne, 'fa-minus-square': !collapseOne}"></i></a></p>
+      </div>
+    </div>
+    <div class="collapse commonCollapse" id="collapseOne">
+      <div class="card card-body">
+        <a routerLink="/parent"  href="#" class="card-link text-center bg-primary text-light">Open Project</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 text-center">
+    <div class="card">
+      <div class="card-body">
+        <p data-toggle="collapse" href="#collapseTwo" class="m-0"><a href="javascript:void(0);"
+            (click)="collapseTwo=!collapseTwo">Custom Modal create<i class="fa ml-1"
+              [ngClass]="{'fa-plus-square': collapse, 'fa-minus-square': !collapse}"
+              [ngClass]="{'fa-plus-square': collapseTwo, 'fa-minus-square': !collapseTwo}"></i></a></p>
+      </div>
+    </div>
+    <div class="collapse commonCollapse" id="collapseTwo">
+      <div class="card card-body">
+        <a routerLink="/customs" class="card-link text-center bg-primary text-light">Open Project</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 text-center">
+    <div class="card">
+      <div class="card-body">
+        <p data-toggle="collapse" href="#collapseThree" class="m-0"><a href="javascript:void(0);"
+            (click)="collapseThree=!collapseThree">Wild Card Route<i class="fa ml-1"
+              [ngClass]="{'fa-plus-square': collapse, 'fa-minus-square': !collapse}"
+              [ngClass]="{'fa-plus-square': collapseThree, 'fa-minus-square': !collapseThree}"></i></a></p>
+      </div>
+    </div>
+    <div class="collapse commonCollapse" id="collapseThree">
+      <div class="card card-body">
+        <a routerLink="/wildcard"  class="card-link text-center bg-primary text-light">Open Project</a>
+      </div>
     </div>
   </div>
 </div>

@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row mb-2">
+        <div class="col-2"></div>
+        <div class="col-8">
+          <div class="text-center h5 p-2 bg-light text-monospace font-weight-light border border-info border-top-0">Angular Random Projects</div>
+        </div>
+        <div class="col">
+        </div>
+      </div>
+  <div class="row">
+    <div class="col">
+        <div class="jumbotron mb-2">
+            <h3>Root Comoponent</h3>
+            <p class="lead">@Input()</p>
+            <hr class="my-4">
+            <div class="input-group">
+              <input #data class="form-control" type="text" placeholder="Child data" aria-label="child data" aria-describedby="my-addon">
+              <div class="input-group-append">
+                <span  (click)="changeData(data.value)"  class="input-group-text" id="my-addon">Send to Parent</span>
+              </div>
+            </div>
+            <hr class="my-4">
+            <div class="alert alert-primary" role="alert">
+              {{message}}
+            </div>
+          </div>
+    </div>
+    <div class="col">
+        <app-child (childEvent)="message=$event"  [parentData]="msg"></app-child>
+    </div>
+  </div>
+</div>
