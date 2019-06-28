@@ -56,3 +56,51 @@
     </div>
   </div>
 </div>
+
+<div class="row mt-2">
+  <div class="col-4 text-center">
+    <div class="card">
+      <div class="card-body">
+        <p data-toggle="collapse" href="#collapseFive" class="m-0"><a href="javascript:void(0);"
+            (click)="collapseFour=!collapseFour">Upcomming..<i class="fa ml-1"
+              [ngClass]="{'fa-plus-square': collapse, 'fa-minus-square': !collapse}"
+              [ngClass]="{'fa-plus-square': collapseFive, 'fa-minus-square': !collapseFive}"></i></a></p>
+      </div>
+    </div>
+    <div class="collapse commonCollapse" id="collapseFive">
+      <div class="card card-body">
+        <a href="javascript:void(0);"  class="card-link text-center bg-primary text-light">Open Project</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 text-center">
+    <div class="card">
+      <div class="card-body">
+        <p data-toggle="collapse" href="#collapseSix" class="m-0"><a href="javascript:void(0);"
+            (click)="collapseSix=!collapseSix">Upcomming..<i class="fa ml-1"
+              [ngClass]="{'fa-plus-square': collapse, 'fa-minus-square': !collapse}"
+              [ngClass]="{'fa-plus-square': collapseSix, 'fa-minus-square': !collapseSix}"></i></a></p>
+      </div>
+    </div>
+    <div class="collapse commonCollapse" id="collapseSix">
+      <div class="card card-body">
+        <a href="javascript:void(0);"  class="card-link text-center bg-primary text-light">Open Project</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 text-center">
+    <div class="card">
+      <div class="card-body">
+        <p data-toggle="collapse" href="#collapseFour" class="m-0"><a href="javascript:void(0);"
+            (click)="collapseFour=!collapseFour">Upcomming..<i class="fa ml-1"
+              [ngClass]="{'fa-plus-square': collapse, 'fa-minus-square': !collapse}"
+              [ngClass]="{'fa-plus-square': collapseFour, 'fa-minus-square': !collapseFour}"></i></a></p>
+      </div>
+    </div>
+    <div class="collapse commonCollapse" id="collapseFour">
+      <div class="card card-body">
+        <a href="javascript:void(0);"  class="card-link text-center bg-primary text-light">Open Project</a>
+      </div>
+    </div>
+  </div>
+</div>
