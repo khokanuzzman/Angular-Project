@@ -7,4 +7,11 @@
   </div>
   <hr class="my-4">
   <button class="btn btn-primary" (click)="eventFire()">Sent it to parent</button>
+  <hr class="my-4">
+  <div class="input-group">
+    <input class="form-control" #getdata type="text" placeholder="input" aria-label="Recipient's " aria-describedby="my-addon">
+    <div class="input-group-append">
+      <button (click)="childData(getdata.value)" class="input-group-text btn btn-primary" id="my-addon">Send Data to Parent</button>
+    </div>
+  </div>
 </div>

@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ParentComponent implements OnInit {
   public msg="";
   public message ="";
+  public inputMsg="";
   constructor() { }
 
   ngOnInit() {

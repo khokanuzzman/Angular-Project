@@ -16,17 +16,21 @@
             <div class="input-group">
               <input #data class="form-control" type="text" placeholder="Child data" aria-label="child data" aria-describedby="my-addon">
               <div class="input-group-append">
-                <span  (click)="changeData(data.value)"  class="input-group-text" id="my-addon">Send to Parent</span>
+                <span  (click)="changeData(data.value)"  class="input-group-text btn btn-success" id="my-addon">Send to Parent</span>
               </div>
             </div>
             <hr class="my-4">
             <div class="alert alert-primary" role="alert">
               {{message}}
             </div>
+            <hr class="my-4">
+            <div class="alert alert-primary" role="alert">
+              {{inputMsg}}
+            </div>
           </div>
     </div>
     <div class="col">
-        <app-child (childEvent)="message=$event"  [parentData]="msg"></app-child>
+        <app-child (childInputData)="inputMsg=$event" (childEvent)="message=$event"  [parentData]="msg"></app-child>
     </div>
   </div>
 </div>
