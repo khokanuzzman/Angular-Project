@@ -11,6 +11,8 @@ import { CustomsComponent } from './components/customs/customs.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
+import { HttpModule } from '@angular/http';
+import { CrudOperationComponent } from './components/crud/crud-operation/crud-operation.component';
 
 
 @NgModule({
@@ -23,12 +25,13 @@ import { ChildComponent } from './components/child/child.component';
     NotFoundPageComponent,
     ParentComponent,
     ChildComponent,
-    
+    CrudOperationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent],

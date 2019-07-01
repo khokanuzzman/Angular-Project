@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Get Data</h1>
+      <hr class="my-4">
+      <ul class="list-group">
+          <li *ngFor="let post of posts" class="list-group-item">
+          <button (click)="updatePost(post,value)" class="btn btn-primary btn-small">update</button>
+          <span (click)="editData(data.innerText,value)" #data >{{post.title}}</span></li>
+      </ul>
+    </div>
+    <div class="col">
+        <h1>Create Post</h1>
+        <hr class="my-4">
+        <input class="form-control" (keyup.enter)="createPost(value)" #value type="text" name="">
+      </div>
+  </div>
+</div>
