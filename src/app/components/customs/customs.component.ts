@@ -9,6 +9,7 @@ export class CustomsComponent implements OnInit {
 
   public isViewable: boolean = false;
 
+
   public styleBinding =
     {
       top: "10%",
@@ -21,6 +22,7 @@ constructor() { }
 
 ngOnInit() {
 }
+
 
   public openModal()
 {

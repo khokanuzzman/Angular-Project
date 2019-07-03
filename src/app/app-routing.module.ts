@@ -6,6 +6,7 @@ import { CustomsComponent } from './components/customs/customs.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { ParentComponent } from './components/parent/parent.component';
 import { CrudOperationComponent } from './components/crud/crud-operation/crud-operation.component';
+import { DragdropComponent } from './components/dragdrop/dragdrop.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'random',component: RandomPrjComponent },
   { path: 'customs', component: CustomsComponent },
   { path: 'parent', component: ParentComponent},
+  { path: 'dragdrop', component: DragdropComponent},
   { path: 'get-data', component:CrudOperationComponent},
   { path: '**', component: NotFoundPageComponent},
   // { path: '',component: HomeComponent },

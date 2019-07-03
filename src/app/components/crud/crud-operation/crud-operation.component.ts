@@ -10,11 +10,7 @@ import{Http} from '@angular/http';
 export class CrudOperationComponent implements OnInit {
   public posts=[];
   private url="https://jsonplaceholder.typicode.com/posts";
-  constructor(private http:Http) { 
-    http.get(this.url)
-    .subscribe(response=>{
-      this.posts = response.json();
-    });
+  constructor(private http:Http) {
   }
 
   createPost(input: HTMLInputElement)
@@ -45,10 +41,20 @@ export class CrudOperationComponent implements OnInit {
     }else{
       alert('insert some data')
     }
-
+  }
+  deletePost(post){
+    this.http.delete(this.url +'/'+ post.id)
+    .subscribe(response=>{
+        let index= this.posts.indexOf(post);
+        console.log(this.posts.splice(index, 1));
+    });
   }
 
   ngOnInit() {
+    this.http.get(this.url)
+    .subscribe(response=>{
+      this.posts = response.json();
+    });
   }
 
 }

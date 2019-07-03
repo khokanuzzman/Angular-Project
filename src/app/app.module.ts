@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ResizableModule } from 'angular-resizable-element';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
 import { HttpModule } from '@angular/http';
 import { CrudOperationComponent } from './components/crud/crud-operation/crud-operation.component';
+import { DragdropComponent } from './components/dragdrop/dragdrop.component';
 
 
 @NgModule({
@@ -25,13 +27,15 @@ import { CrudOperationComponent } from './components/crud/crud-operation/crud-op
     NotFoundPageComponent,
     ParentComponent,
     ChildComponent,
-    CrudOperationComponent
+    CrudOperationComponent,
+    DragdropComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
-    HttpModule
+    HttpModule,
+    ResizableModule
   ],
   providers: [],
   bootstrap: [AppComponent],

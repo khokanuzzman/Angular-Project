@@ -4,7 +4,7 @@
       <div class="card bg-info pt-2">
         <div class="row">
           <div class="col-3">
-            <span class="p-1 text-light"  data-toggle="collapse" data-target="#collapseProfile" aria-expanded="true" aria-controls="collapseProfile"><i class="fa fa-bars border-light"></i></span>
+            <span><i class="fa fa-bars border-light"></i></span>
           </div>
           <div class="col-6">
             <ul class="list-inline text-center">
@@ -15,7 +15,9 @@
           </div>
           <div class="col-3">
             <ul class="list-inline text-secondary">
-              <li class="list-inline-item"><a href="javascript:void(0);"><span class="float-right text-dark"><i class="fa fa-info-circle"></i></span></a></li>
+              <li class="list-inline-item"><a href="javascript:void(0);"><span  data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" class="float-right text-dark"><i class="fa fa-info-circle"></i></span></a></li>
+              <div class="pop">
+              </div>
             </ul>
           </div>
         </div>
@@ -42,11 +44,15 @@
                   <a routerLink="/customs" routerLinkActive="active" href="#">customs</a>
                   <span class="badge text-info border-info border badge-pill animated infinite pulse delay-4s">1</span>
                 </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a routerLink="/dragdrop" routerLinkActive="active" href="#">Drag Drop</a>
+                  <span class="badge text-info border-info border badge-pill animated infinite pulse delay-4s">1</span>
+                </li>
               </ul>
         </div>
       </div>
     </div>
-    <div class="col-9 bg-light border border-info">
+    <div class="col-9 bg-light border border-info" style="overflow: hidden">
         <router-outlet></router-outlet>
     </div>
   </div>

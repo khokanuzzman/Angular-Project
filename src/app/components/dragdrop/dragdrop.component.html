@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+    
+        </div>
+        <div class="col-8">
+          <div class="text-center h5 p-2 bg-light text-monospace font-weight-light border border-info border-top-0">Angular
+            Drag Drop Projects</div>
+        </div>
+        <div class="col">
+        </div>
+      </div>
+    <div class="row">
+        <div class="col">
+          <div class="alert alert-success" role="alert">
+            Test Resizable Div
+          </div>
+          <div class="text-center">
+              <div
+                class="rectangle"
+                [ngStyle]="style"
+                mwlResizable
+                [validateResize]="validate"
+                [enableGhostResize]="true"
+                [resizeSnapGrid]="{ left: 50, right: 50 }"
+                (resizeEnd)="onResizeEnd($event)"
+              >
+                <div
+                  class="resize-handle-top"
+                  mwlResizeHandle
+                  [resizeEdges]="{ top: true }"
+                ></div>
+                <div
+                  class="resize-handle-left"
+                  mwlResizeHandle
+                  [resizeEdges]="{ left: true }"
+                ></div>
+                <div
+                  class="resize-handle-right"
+                  mwlResizeHandle
+                  [resizeEdges]="{ right: true }"
+                ></div>
+                <div
+                  class="resize-handle-bottom"
+                  mwlResizeHandle
+                  [resizeEdges]="{ bottom: true }"
+                ></div>
+              </div>
+            </div>
+        </div>
+      </div>
+</div>

@@ -10,22 +10,22 @@
   </div>
 </div>
 <div class="row mt-2">
-  <div class="col-4 text-center">
+  <div class="col-4 text-center animated delay-1s slideInLeft">
     <div class="card" data-toggle="collapse" href="#collapseOne">
       <div class="card-body">
         <p data-toggle="collapse" href="#collapseOne" class="m-0"><a href="javascript:void(0);"
-            (click)="collapseOne=!collapseOne">Component Interaction<i class="fa ml-1"
+            (click)="collapseOne=!collapseOne">Component Interaction<i class="fa ml-1 animated delay-2s jello"
               [ngClass]="{'fa-plus-square': collapse, 'fa-minus-square': !collapse}"
               [ngClass]="{'fa-plus-square': collapseOne, 'fa-minus-square': !collapseOne}"></i></a></p>
       </div>
     </div>
-    <div class="collapse commonCollapse" id="collapseOne">
+    <div class="collapse commonCollapse animated delay-1s jackInTheBox" id="collapseOne">
       <div class="card card-body">
         <a routerLink="/parent"  href="#" class="card-link text-center bg-primary text-light">Open Project</a>
       </div>
     </div>
   </div>
-  <div class="col-4 text-center">
+  <div class="col-4 text-center  animated delay-2s slideInRight">
     <div class="card">
       <div class="card-body">
         <p data-toggle="collapse" href="#collapseTwo" class="m-0"><a href="javascript:void(0);"
@@ -40,8 +40,8 @@
       </div>
     </div>
   </div>
-  <div class="col-4 text-center">
-    <div class="card">
+  <div class="col-4 text-center animated delay-3s slideInRight">
+    <div class="card animated delay-4s headShake">
       <div class="card-body">
         <p data-toggle="collapse" href="#collapseThree" class="m-0"><a href="javascript:void(0);"
             (click)="collapseThree=!collapseThree">Wild Card Route<i class="fa ml-1"
