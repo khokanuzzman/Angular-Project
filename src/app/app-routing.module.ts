@@ -7,6 +7,7 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
 import { ParentComponent } from './components/parent/parent.component';
 import { CrudOperationComponent } from './components/crud/crud-operation/crud-operation.component';
 import { DragdropComponent } from './components/dragdrop/dragdrop.component';
+import { FormsComponent } from './components/forms/forms.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'parent', component: ParentComponent},
   { path: 'dragdrop', component: DragdropComponent},
   { path: 'get-data', component:CrudOperationComponent},
+  { path: 'contact', component:FormsComponent},
   { path: '**', component: NotFoundPageComponent},
   // { path: '',component: HomeComponent },
    { path: 'home',

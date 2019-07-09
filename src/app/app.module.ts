@@ -15,6 +15,8 @@ import { ChildComponent } from './components/child/child.component';
 import { HttpModule } from '@angular/http';
 import { CrudOperationComponent } from './components/crud/crud-operation/crud-operation.component';
 import { DragdropComponent } from './components/dragdrop/dragdrop.component';
+import { FormsComponent } from './components/forms/forms.component';
+import { FormsModule }   from '@angular/forms';
 
 
 @NgModule({
@@ -28,14 +30,16 @@ import { DragdropComponent } from './components/dragdrop/dragdrop.component';
     ParentComponent,
     ChildComponent,
     CrudOperationComponent,
-    DragdropComponent
+    DragdropComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
     HttpModule,
-    ResizableModule
+    ResizableModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

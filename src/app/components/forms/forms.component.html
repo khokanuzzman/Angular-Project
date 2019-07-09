@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="text-center h5 p-2 bg-light text-monospace font-weight-light border border-info border-top-0">Angular
+        Forms Projects</div>
+    </div>
+    <div class="col"></div>
+  </div>
+  <div class="row">
+    <div class="col p-2">
+      <form #f="ngForm" (ngSubmit)="submit(f)">
+        <div ngModelGroup="contact">
+          <div class="form-group">
+            <label for="firstName">Firs Name</label>
+            <input ngModel required name="firstname" id="firstName" #firstname="ngModel" class="form-control"
+              (change)="log(firstname,lastname)" type="text">
+            <div *ngIf="firstname.touched && !firstname.valid" class="alert alert-danger" role="alert">
+              First Name Required!
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input ngModel name="lastName" id="lastName" #lastname="ngModel" class="form-control" type="text">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input required type="email" ngModel class="form-control" #email="ngModel" name="email" id="email"
+              aria-describedby="emailHelpId" placeholder="">
+            <small id="emailHelpId" class="form-text text-muted">test@test.com</small>
+            <div *ngIf="email.touched && !email.valid" class="alert alert-danger" role="alert">
+              Email required
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Password</label>
+          <input required ngModel #password="ngModel" type="password" class="form-control" name="password" id="password"
+            placeholder="password">
+          <div *ngIf="password.touched && !password.valid" class="alert alert-danger" role="alert">
+            password required!
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="my-textarea">Comment</label>
+          <textarea ngModel #comment="ngModel" id="my-textarea" class="form-control" name="comment" rows="3"></textarea>
+        </div>
+        
+        <button [disabled]="!f.valid" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
