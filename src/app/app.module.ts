@@ -16,7 +16,14 @@ import { HttpModule } from '@angular/http';
 import { CrudOperationComponent } from './components/crud/crud-operation/crud-operation.component';
 import { DragdropComponent } from './components/dragdrop/dragdrop.component';
 import { FormsComponent } from './components/forms/forms.component';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// firebse config
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+import { FirebsLearningComponent } from './components/firebs-learning/firebs-learning.component';
+import { FirebaseService } from './services/firebase.service';
+import { AddDataComponent } from './components/firebs-learning/add-data/add-data.component';
 
 
 @NgModule({
@@ -31,7 +38,9 @@ import { FormsModule }   from '@angular/forms';
     ChildComponent,
     CrudOperationComponent,
     DragdropComponent,
-    FormsComponent
+    FormsComponent,
+    FirebsLearningComponent,
+    AddDataComponent
   ],
   imports: [
     BrowserModule,
@@ -39,10 +48,14 @@ import { FormsModule }   from '@angular/forms';
     AngularFontAwesomeModule,
     HttpModule,
     ResizableModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase,"bugfix"),
+    AngularFirestoreModule,
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'})
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent],
-  
+
 })
 export class AppModule { }

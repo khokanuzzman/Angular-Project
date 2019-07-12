@@ -9,6 +9,7 @@
   </div>
   <div class="row">
     <div class="col p-2">
+      <h3>Template driven forms</h3>
       <form #f="ngForm" (ngSubmit)="submit(f)">
         <div ngModelGroup="contact">
           <div class="form-group">
@@ -45,8 +46,61 @@
           <label for="my-textarea">Comment</label>
           <textarea ngModel #comment="ngModel" id="my-textarea" class="form-control" name="comment" rows="3"></textarea>
         </div>
-        
+        <div class="form-check">
+          <input id="my-checkbox" ngModel class="form-check-input" type="checkbox" name="isSubscribe" value="true">
+          <label for="my-checkbox" class="form-check-label">Check to subcribe</label>
+        </div>
+        <div class="form-group">
+          <label for="my-select">Contact Method</label>
+          <select ngModel id="my-select" class="form-control" name="contactMethod">
+            <option value="">select</option>
+            <option *ngFor="let method of contactMethod" [value]="method.id">{{method.name}}</option>
+          </select>
+        </div>
+        <div class="radio">
+          <label *ngFor="let method of contactMethod" class="btn btn-primary mr-1">
+            <input ngModel name="contactMethod2" [value]="method.id" type="radio"> {{method.name| titlecase}}
+          </label>
+        </div>
+
+        <div class="card mb-1">
+          <div class="card-body">
+            <h5 class="card-title">Input Data</h5>
+            <p class="card-text">{{f.value | json}}</p>
+          </div>
+        </div>
         <button [disabled]="!f.valid" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    
+    <div class="col">
+      <h3>Reactive forms</h3>
+      <form [formGroup]="form" >
+        <div class="form-group">
+          <label for="user-name">User Name</label>
+          <input 
+                formControlName="username"
+                id="user-name" 
+                class="form-control" 
+                type="text"
+                >
+          <div *ngIf="form.get('username').touched && form.get('username').invalid" class="alert alert-danger" role="alert">
+            user name required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="user-password">Password</label>
+          <input
+                formControlName="password" 
+                id="user-password" 
+                class="form-control" 
+                type="text"
+                >
+                <div *ngIf="form.get('password').touched && form.get('password').invalid" class="alert alert-danger" role="alert">
+                  password required!
+                </div>
+        </div>
+        <button class="btn btn-primary" type="button">Sign Up</button>
       </form>
     </div>
   </div>

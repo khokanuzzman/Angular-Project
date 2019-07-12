@@ -8,6 +8,7 @@ import { ParentComponent } from './components/parent/parent.component';
 import { CrudOperationComponent } from './components/crud/crud-operation/crud-operation.component';
 import { DragdropComponent } from './components/dragdrop/dragdrop.component';
 import { FormsComponent } from './components/forms/forms.component';
+import { FirebsLearningComponent } from './components/firebs-learning/firebs-learning.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'dragdrop', component: DragdropComponent},
   { path: 'get-data', component:CrudOperationComponent},
   { path: 'contact', component:FormsComponent},
+  { path: 'firebase', component:FirebsLearningComponent},
   { path: '**', component: NotFoundPageComponent},
   // { path: '',component: HomeComponent },
    { path: 'home',
