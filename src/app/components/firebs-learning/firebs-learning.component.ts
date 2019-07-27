@@ -36,12 +36,11 @@ export class FirebsLearningComponent implements OnInit {
   updateData(data:Mydata){
     this.firebaseService.updateData(data);
     if(this.updateData){
-      this.success=true;
       $( document ).ready(function() {
         $('.toast').toast('show');
-    });
-
-    }
+        });
+    } 
+    this.success=true;
   }
 
 }
