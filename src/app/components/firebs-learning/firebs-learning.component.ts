@@ -41,6 +41,10 @@ export class FirebsLearningComponent implements OnInit {
         });
     } 
     this.success=true;
+    this.editState=false;
+  }
+  close(){
+    this.editState=false;
   }
 
 }

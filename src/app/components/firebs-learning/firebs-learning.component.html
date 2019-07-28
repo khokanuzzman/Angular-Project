@@ -1,7 +1,8 @@
 <div class="row">
   <div class="col-2"></div>
   <div class="col-8">
-    <div class="text-center h5 p-2 bg-light text-monospace font-weight-light border border-info border-top-0">Angular Firebase</div>
+    <div class="text-center h5 p-2 bg-light text-monospace font-weight-light border border-info border-top-0">Angular
+      Firebase</div>
   </div>
   <div class="col"></div>
 </div>
@@ -10,70 +11,61 @@
     <app-add-data></app-add-data>
   </div>
 </div>
-
 <div class="row">
   <div class="col">
-      <div *ngIf="success" role="alert" aria-live="assertive" aria-atomic="true" class="toast">
-          <div class="toast-header">
-            <strong class="mr-auto">Message</strong>
-            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="toast-body">
-            Your Data Updated Successfully
+    <div *ngIf="success" role="alert" aria-live="assertive" aria-atomic="true" class="toast">
+      <div class="toast-header">
+        <strong class="mr-auto">Message</strong>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body">
+        Your Data Updated Successfully
+      </div>
+    </div>
+    <div class="container" *ngIf="data?.length>0; else noData">
+      <div class="row text-center text-monospace text-white font-weight-bold bg-info">
+        <div class="col">Title</div>
+        <div class="col">Description</div>
+        <div class="col">Action</div>
+      </div>
+      <div class="row bg-warning text-dark p-2 border-bottom" *ngFor="let d of data" id="{{d.id}}">
+        <div class="col-4 border-right"><div class="animated jackInTheBox slow">{{d.title}}</div></div>
+        <div class="col-4 border-right">{{d.description}}</div>
+        <div class="col-4 text-center">
+          <button (click)="editData($event,d);" class="btn btn-info" type="button">Edit</button>
+          <button (click)="deleteData($event,d);" class="btn btn-danger" type="button">Delete</button>
+        </div>
+        <div class="col-12 mt-2 animated bounce edit-panel" *ngIf="editState && dtoEdit.id == d.id">
+            <i (click)="close()" class="fa fa-window-close close" aria-hidden="true"></i>
+            <div class="card p-2">
+              <form (ngSubmit)="updateData(d)">
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="title">Title</label>
+                      <input id="update-title" [(ngModel)]="d.title" class="form-control" type="text" name="update-title">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="description">Description</label>
+                      <input id="update-description" [(ngModel)]="d.description" class="form-control" type="text"
+                        name="update-description">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <input class="btn btn-dark" type="submit" value="update">
+                  </div>
+                </div>
+              </form>
           </div>
         </div>
-    <table *ngIf="data?.length>0; else noData" class="table table-hover bg-light">
-      <tbody>
-        <tr>
-          <th>Title</th>
-          <th>Description</th>
-          <th>Action</th>
-        </tr>
-        <tr *ngFor="let d of data">
-          <td>{{d.title}}</td>
-          <td>{{d.description}}</td>
-          <td style="overflow: hidden">
-            <button (click)="editData($event,d);" class="btn btn-info" type="button">Edit</button>
-            <button (click)="deleteData($event,d);" class="btn btn-danger" type="button">Delete</button>
-          </td>
-          <td *ngIf="editState && dtoEdit.id == d.id">
-            <form (ngSubmit)="updateData(d)">
-                    <div class="row">
-                      <div class="col-6">
-                        <div class="form-group">
-                          <label for="title">Title</label>
-                          <input 
-                           id="update-title" 
-                           [(ngModel)]="d.title" 
-                           class="form-control" 
-                           type="text" 
-                           name="update-title">
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <label for="description">Description</label>
-                          <input
-                          id="update-description"  
-                          [(ngModel)]="d.description"  
-                          class="form-control" 
-                          type="text" 
-                          name="update-description">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col">
-                          <input class="btn btn-dark" type="submit" value="update">
-                      </div>
-                    </div>
-            </form>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+      </div>
+    </div>
     <ng-template #noData>
       <div class="alert alert-info" role="alert">
         There is no data in the list

@@ -1,0 +1,23 @@
+.table-row{
+    display: table-row;
+}
+
+.table-cell{
+    display: table-cell;
+}
+.table{
+    display: table;
+}
+
+.close{
+    position: absolute;
+    right: 20px;
+    top: 4px;
+    display: block;
+    z-index: 9999;
+    cursor: pointer;
+    display: block
+}
+.edit-panel{
+    position: relative;
+}
