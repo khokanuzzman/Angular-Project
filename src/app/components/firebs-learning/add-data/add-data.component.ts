@@ -28,6 +28,8 @@ export class AddDataComponent implements OnInit {
       this.firebaseService.addData(this.data);
       this.data.title='';
       this.data.description='';
+    }else{
+      alert('NO Data');
     }
   }
 

@@ -5,9 +5,9 @@
       <div class="card-body">
         <form (ngSubmit)="onSubmit();" [formGroup]="form">
           <div class="row">
-            <div class="col-6">
+            <div class="col">
               <div class="form-group">
-                <label for="title">Title</label>
+                <label for="title">Task Title</label>
                 <input 
                  formControlName="title"
                  id="title" [(ngModel)]="data.title" 
@@ -20,7 +20,7 @@
                   </div>
               </div>
             </div>
-            <div class="col-6">
+            <div class="col">
               <div class="form-group">
                 <label for="description">Description</label>
                 <input
@@ -30,6 +30,22 @@
                 class="form-control" 
                 type="text" 
                 name="description">
+
+              <div *ngIf="form.get('description').touched && form.get('description').invalid" class="alert alert-danger" role="alert">
+                  Description is required
+              </div>
+              
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="description">Status</label>
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                    <option selected>Choose...</option>
+                    <option value="1">In progress</option>
+                    <option value="2">Deployed</option>
+                    <option value="3">In Test</option>
+                  </select>
 
               <div *ngIf="form.get('description').touched && form.get('description').invalid" class="alert alert-danger" role="alert">
                   Description is required

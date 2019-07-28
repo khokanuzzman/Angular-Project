@@ -26,11 +26,11 @@
     </div>
     <div class="container" *ngIf="data?.length>0; else noData">
       <div class="row text-center text-monospace text-white font-weight-bold bg-info">
-        <div class="col">Title</div>
+        <div class="col">Task Title</div>
         <div class="col">Description</div>
         <div class="col">Action</div>
       </div>
-      <div class="row bg-warning text-dark p-2 border-bottom" *ngFor="let d of data" id="{{d.id}}">
+      <div class="row bg-warning text-dark p-2 border-bottom" *ngFor="let d of data" id="{{d.id}}" >
         <div class="col-4 border-right"><div class="animated jackInTheBox slow">{{d.title}}</div></div>
         <div class="col-4 border-right">{{d.description}}</div>
         <div class="col-4 text-center">
@@ -44,7 +44,7 @@
                 <div class="row">
                   <div class="col-6">
                     <div class="form-group">
-                      <label for="title">Title</label>
+                      <label for="title">Task Title</label>
                       <input id="update-title" [(ngModel)]="d.title" class="form-control" type="text" name="update-title">
                     </div>
                   </div>

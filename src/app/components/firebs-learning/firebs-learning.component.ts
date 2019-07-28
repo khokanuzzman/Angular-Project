@@ -12,7 +12,6 @@ export class FirebsLearningComponent implements OnInit {
   success = false;
   editState: boolean = false;
   dtoEdit : Mydata;
-
   
   data:Mydata[];
   constructor(public firebaseService:FirebaseService) { 
@@ -31,6 +30,7 @@ export class FirebsLearningComponent implements OnInit {
 
   deleteData(event,data:Mydata){
     this.firebaseService.deleteData(data);
+
   }
 
   updateData(data:Mydata){
