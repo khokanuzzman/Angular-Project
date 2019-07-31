@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { Mydata } from 'src/app/models/mydata';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 declare let $: any;
 
 @Component({
@@ -14,13 +17,18 @@ export class FirebsLearningComponent implements OnInit {
   dtoEdit : Mydata;
   
   data:Mydata[];
-  constructor(public firebaseService:FirebaseService) { 
+  constructor(public fireStore:AngularFirestore, public firebaseService: FirebaseService) { 
   }
-
   ngOnInit() {
-    this.firebaseService.getMydata().subscribe(data=>{
+    this.fireStore.collection('bugfix').snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as Mydata;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+    ).subscribe( data => {
       this.data = data;
-    })
+    });
   }
 
   editData(event,data:Mydata){

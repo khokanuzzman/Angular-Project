@@ -40,15 +40,13 @@
             <div class="col">
               <div class="form-group">
                 <label for="description">Status</label>
-                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                    <option selected>Choose...</option>
-                    <option value="1">In progress</option>
-                    <option value="2">Deployed</option>
-                    <option value="3">In Test</option>
+                <select class="custom-select mr-sm-2" id="status" name="status" formControlName="status" [(ngModel)]="data.status">
+                    <option value="" disabled>Chose status</option>
+                    <option *ngFor="let stats of Status" [ngValue]="stats">{{stats}}</option>
                   </select>
 
-              <div *ngIf="form.get('description').touched && form.get('description').invalid" class="alert alert-danger" role="alert">
-                  Description is required
+              <div *ngIf="form.get('status').invalid" class="alert alert-danger" role="alert">
+                  Select Valid status!
               </div>
               
               </div>

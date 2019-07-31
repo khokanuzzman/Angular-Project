@@ -10,13 +10,17 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class AddDataComponent implements OnInit {
   form=new FormGroup({
-    title: new FormControl('', Validators.required),
-    description: new FormControl('', Validators.required)
+    title: new FormControl(null, Validators.required),
+    description: new FormControl(null, Validators.required),
+    status: new FormControl(null, Validators.required)
   });
+
+  Status: any = ['Inprogress', 'Deployed', 'Done', 'Test In progress','Test Done'];
   
   data:Mydata={
     title:'',
-    description:''
+    description:'',
+    status:''
   }
   constructor(public firebaseService:FirebaseService) { }
 
@@ -24,12 +28,12 @@ export class AddDataComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.data.title!='' && this.data.description!=''){
-      this.firebaseService.addData(this.data);
+    if(this.data.title!='' && this.data.description!='' && this.data.status!=''){
+      this.firebaseService.addData(this.form.value);
       this.data.title='';
       this.data.description='';
     }else{
-      alert('NO Data');
+      alert('NO DATA');
     }
   }
 
