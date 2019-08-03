@@ -9,32 +9,50 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./add-data.component.css']
 })
 export class AddDataComponent implements OnInit {
-  form=new FormGroup({
+  form = new FormGroup({
     title: new FormControl(null, Validators.required),
     description: new FormControl(null, Validators.required),
     status: new FormControl(null, Validators.required)
   });
 
-  Status: any = ['Inprogress', 'Deployed', 'Done', 'Test In progress','Test Done'];
-  
-  data:Mydata={
-    title:'',
-    description:'',
-    status:''
+  Status: any = ['Inprogress', 'Deployed', 'Done', 'Test In progress', 'Test Done'];
+
+  data: Mydata = {
+    title: '',
+    description: '',
+    status: ''
   }
-  constructor(public firebaseService:FirebaseService) { }
+  constructor(public firebaseService: FirebaseService) { }
 
   ngOnInit() {
   }
 
-  onSubmit(){
-    if(this.data.title!='' && this.data.description!='' && this.data.status!=''){
+  onSubmit() {
+    if (this.data.title != '' && this.data.description != '' && this.data.status != '') {
+      this.markFormGroupAsTouched(this.form);
+      this.markFormGroupAsUnTouched(this.form);
+      
       this.firebaseService.addData(this.form.value);
-      this.data.title='';
-      this.data.description='';
-    }else{
-      alert('NO DATA');
+      this.data.title = '';
+      this.data.description = '';
     }
   }
 
+  protected markFormGroupAsTouched(formGroup: FormGroup) {
+    (<any>Object).values(formGroup.controls).forEach(control => {
+      control.markAsDirty();
+      if (control.controls) {
+        control.controls.forEach(ctrl => this.markFormGroupAsTouched(ctrl));
+      }
+    });
+  }
+
+  protected markFormGroupAsUnTouched(formGroup: FormGroup) {
+    (<any>Object).values(formGroup.controls).forEach(control => {
+      control.markAsPristine();
+      if (control.controls) {
+        control.controls.forEach(ctrl => this.markFormGroupAsUnTouched(ctrl));
+      }
+    })
+  }
 }

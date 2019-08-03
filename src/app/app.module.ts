@@ -17,6 +17,7 @@ import { CrudOperationComponent } from './components/crud/crud-operation/crud-op
 import { DragdropComponent } from './components/dragdrop/dragdrop.component';
 import { FormsComponent } from './components/forms/forms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 // firebse config
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -24,6 +25,10 @@ import { environment } from '../environments/environment';
 import { FirebsLearningComponent } from './components/firebs-learning/firebs-learning.component';
 import { FirebaseService } from './services/firebase.service';
 import { AddDataComponent } from './components/firebs-learning/add-data/add-data.component';
+import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
+import { AuthComponent } from './components/auth/auth.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegisterComponent } from './components/auth/register/register.component';
 
 
 @NgModule({
@@ -40,7 +45,10 @@ import { AddDataComponent } from './components/firebs-learning/add-data/add-data
     DragdropComponent,
     FormsComponent,
     FirebsLearningComponent,
-    AddDataComponent
+    AddDataComponent,
+    AuthComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +60,7 @@ import { AddDataComponent } from './components/firebs-learning/add-data/add-data
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase,"bugfix"),
     AngularFirestoreModule,
+    AngularFireAuthModule,
     ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'})
   ],
   providers: [FirebaseService],

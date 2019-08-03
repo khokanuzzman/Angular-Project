@@ -9,10 +9,13 @@ import { CrudOperationComponent } from './components/crud/crud-operation/crud-op
 import { DragdropComponent } from './components/dragdrop/dragdrop.component';
 import { FormsComponent } from './components/forms/forms.component';
 import { FirebsLearningComponent } from './components/firebs-learning/firebs-learning.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegisterComponent } from './components/auth/register/register.component';
+import { AuthGuardService } from './guards/auth-guard.service';
 
 
 const routes: Routes = [
-  {path:'',component:RandomPrjComponent},
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'crud', component: CrudComponent },
   { path: 'random',component: RandomPrjComponent },
   { path: 'customs', component: CustomsComponent },
@@ -21,15 +24,15 @@ const routes: Routes = [
   { path: 'get-data', component:CrudOperationComponent},
   { path: 'contact', component:FormsComponent},
   { path: 'firebase', component:FirebsLearningComponent},
-  { path: '**', component: NotFoundPageComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent},
   // { path: '',component: HomeComponent },
-   { path: 'home',
-     redirectTo: '',
-    pathMatch: 'full'
-   },
+  //  { path: 'home',
+  //    redirectTo: '',
+  //   pathMatch: 'full'
+  //  },
+   { path: '**', component: NotFoundPageComponent},
 ]
-
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

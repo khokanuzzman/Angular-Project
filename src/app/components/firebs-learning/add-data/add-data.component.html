@@ -45,7 +45,7 @@
                     <option *ngFor="let stats of Status" [ngValue]="stats">{{stats}}</option>
                   </select>
 
-              <div *ngIf="form.get('status').invalid" class="alert alert-danger" role="alert">
+              <div *ngIf="form.get('status').touched && form.get('status').invalid" class="alert alert-danger" role="alert">
                   Select Valid status!
               </div>
               
