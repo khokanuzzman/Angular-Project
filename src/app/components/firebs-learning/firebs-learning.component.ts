@@ -4,6 +4,7 @@ import { Mydata } from 'src/app/models/mydata';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 declare let $: any;
 
 @Component({
@@ -30,6 +31,14 @@ export class FirebsLearningComponent implements OnInit {
       this.data = data;
     });
   }
+
+
+  editForm = new FormGroup({
+    title: new FormControl(null, Validators.required),
+    description: new FormControl(null, Validators.required),
+    status: new FormControl(null, Validators.required)
+  });
+
 
   editData(event,data:Mydata){
     this.editState=true;

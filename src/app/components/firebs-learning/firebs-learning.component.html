@@ -42,18 +42,18 @@
         <div class="col-12 mt-2 animated bounce edit-panel" *ngIf="editState && dtoEdit.id == d.id">
             <i (click)="close()" class="fa fa-window-close close" aria-hidden="true"></i>
             <div class="card p-2">
-              <form (ngSubmit)="updateData(d)">
+              <form  [formGroup]="editForm" (ngSubmit)="updateData(d)">
                 <div class="row">
                   <div class="col-6">
                     <div class="form-group">
                       <label for="title">Task Title</label>
-                      <input id="update-title" [(ngModel)]="d.title" class="form-control" type="text" name="update-title">
+                      <input id="update-title" formControlName="title" [(ngModel)]="d.title" class="form-control" type="text" name="update-title">
                     </div>
                   </div>
                   <div class="col-6">
                     <div class="form-group">
                       <label for="description">Description</label>
-                      <input id="update-description" [(ngModel)]="d.description" class="form-control" type="text"
+                      <input id="update-description"  formControlName="description"  [(ngModel)]="d.description" class="form-control" type="text"
                         name="update-description">
                     </div>
                   </div>
