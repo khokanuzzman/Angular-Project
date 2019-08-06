@@ -11,7 +11,7 @@ export class FirebaseService {
   datas: Observable<Mydata[]>;
   dataDoc: AngularFirestoreDocument<Mydata>;
   dataCollection: AngularFirestoreCollection<Mydata>;
-  test: any[] = [];
+  data: any[] = [];
   constructor(public db: AngularFirestore) {
     this.dataCollection = db.collection<Mydata>('bugfix');
     // .snapshotChanges() returns a DocumentChangeAction[], which contains
@@ -34,7 +34,7 @@ export class FirebaseService {
   }
 
   getMydata() {
-    return this.test;
+    return this.datas;
   }
 
   addData(data: Mydata) {

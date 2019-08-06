@@ -31,39 +31,56 @@
         <div class="col">Status</div>
         <div class="col">Action</div>
       </div>
-      <div class="row bg-warning text-dark p-2 border-bottom" *ngFor="let d of data" id="{{d.id}}" >
-        <div class="col border-right"><div class="animated pulse">{{d.title}}</div></div>
+      <div class="row bg-warning text-dark p-2 border-bottom" *ngFor="let d of data" id="{{d.id}}">
+        <div class="col border-right">
+          <div class="animated pulse">{{d.title}}</div>
+        </div>
         <div class="col border-right">{{d.description}}</div>
         <div class="col border-right">{{d.status}}</div>
         <div class="col text-center">
           <button (click)="editData($event,d);" class="btn btn-info" type="button">Edit</button>
           <button (click)="deleteData($event,d);" class="btn btn-danger" type="button">Delete</button>
         </div>
-        <div class="col-12 mt-2 animated bounce edit-panel" *ngIf="editState && dtoEdit.id == d.id">
-            <i (click)="close()" class="fa fa-window-close close" aria-hidden="true"></i>
-            <div class="card p-2">
-              <form  [formGroup]="editForm" (ngSubmit)="updateData(d)">
-                <div class="row">
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label for="title">Task Title</label>
-                      <input id="update-title" formControlName="title" [(ngModel)]="d.title" class="form-control" type="text" name="update-title">
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label for="description">Description</label>
-                      <input id="update-description"  formControlName="description"  [(ngModel)]="d.description" class="form-control" type="text"
-                        name="update-description">
-                    </div>
+        <div class="col-12 mt-2 animated bounce edit-panel" *ngIf="editState && dtoEdit.id == d.id"> 
+          <i (click)="close()" class="fa fa-window-close close" aria-hidden="true"></i>
+          <div class="card p-2">
+            <form [formGroup]="editForm" (ngSubmit)="updateData(d)">
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="title">Task Title</label>
+                    <input id="update-title" formControlName="title" [(ngModel)]="d.title" class="form-control"
+                      type="text" name="update-title">
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col">
-                    <input class="btn btn-dark" type="submit" value="update">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                    <input id="update-description" formControlName="description" [(ngModel)]="d.description"
+                      class="form-control" type="text" name="update-description">
                   </div>
                 </div>
-              </form>
+                <div class="col">
+                  <div class="form-group">
+                      <label for="editStatus">Description</label>
+                    <select class="custom-select mr-sm-2" id="editStatus" name="status" formControlName="editStatus"
+                      [(ngModel)]="d.status">
+                      <option value="" disabled>Chose status</option>
+                      <option *ngFor="let stats of status" [ngValue]="stats">{{stats}}</option>
+                    </select>
+
+                    <!-- <label for="status">Description</label>
+                        <input id="update-description"  formControlName="description"  [(ngModel)]="d.description" class="form-control" type="text"
+                          name="update-description"> -->
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <input class="btn btn-dark" type="submit" value="update">
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>

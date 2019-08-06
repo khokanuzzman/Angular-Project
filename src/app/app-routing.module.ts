@@ -11,11 +11,12 @@ import { FormsComponent } from './components/forms/forms.component';
 import { FirebsLearningComponent } from './components/firebs-learning/firebs-learning.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
-import { AuthGuardService } from './guards/auth-guard.service';
+import { HomeComponent } from './components/home/home.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component:HomeComponent, pathMatch: 'full' },
   { path: 'crud', component: CrudComponent },
   { path: 'random',component: RandomPrjComponent },
   { path: 'customs', component: CustomsComponent },

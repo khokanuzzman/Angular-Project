@@ -16,11 +16,11 @@ export class FirebsLearningComponent implements OnInit {
   success = false;
   editState: boolean = false;
   dtoEdit : Mydata;
+
+  status: any = ['Inprogress', 'Deployed', 'Done', 'Test In progress', 'Test Done'];
   
   data:Mydata[];
   constructor(public fireStore:AngularFirestore, public firebaseService: FirebaseService) { 
-  }
-  ngOnInit() {
     this.fireStore.collection('bugfix').snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Mydata;
@@ -31,22 +31,26 @@ export class FirebsLearningComponent implements OnInit {
       this.data = data;
     });
   }
+  ngOnInit() {
+    
+  }
 
 
   editForm = new FormGroup({
     title: new FormControl(null, Validators.required),
     description: new FormControl(null, Validators.required),
-    status: new FormControl(null, Validators.required)
+    editStatus: new FormControl(null, Validators.required)
   });
 
 
-  editData(event,data:Mydata){
+  editData(event,d:Mydata){
     this.editState=true;
-    this.dtoEdit = data;
+    this.dtoEdit = d;
+    console.log(this.dtoEdit);
   }
 
-  deleteData(event,data:Mydata){
-    this.firebaseService.deleteData(data);
+  deleteData(event,d:Mydata){
+    this.firebaseService.deleteData(d);
 
   }
 
