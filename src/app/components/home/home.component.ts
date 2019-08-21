@@ -12,6 +12,8 @@ import { map } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
   data:Mydata[];
+  public display:boolean=false;
+
   constructor(public fireStore:AngularFirestore, public firebaseService: FirebaseService) {
     this.fireStore.collection('bugfix').snapshotChanges().pipe(
       map(actions => actions.map(a => {
