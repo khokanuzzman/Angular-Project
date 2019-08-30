@@ -4,7 +4,8 @@
       <div class="card bg-info pt-2">
         <div class="row">
           <div class="col-3">
-            <span class="p-1 text-light"  data-toggle="collapse" data-target="#collapseProfile" aria-expanded="true" ><i class="fa fa-bars border-light"></i></span>
+            <span class="p-1 text-light"  data-toggle="collapse" data-target="#collapseProfile" aria-expanded="true" >
+              <i class="fa fa-bars border-light"></i></span>
           </div>
           <div class="col-6">
             <ul class="list-inline text-center">
@@ -13,10 +14,20 @@
               <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin text-light"></i></a></li>
             </ul>
           </div>
-          <div class="col-3">
+          <div class="col-1">
             <ul class="list-inline text-secondary">
-              <li class="list-inline-item"><a href="javascript:void(0);"><span  data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" class="float-right text-dark"><i class="fa fa-info-circle"></i></span></a></li>
+              <li class="list-inline-item">
+                <a href="javascript:void(0);">
+                  <span  data-toggle="popover" title="Popover title"
+                   data-content="And here's some amazing content. It's very engaging. Right?" 
+                   class="float-right text-dark">
+                    <i class="fa fa-info-circle"></i></span>
+                </a>
+            </li>
             </ul>
+          </div>
+          <div class="col-1">
+              <a href="javascript:void(0)" class="text-dark" routerLink="/home" ><i class="fa fa-home" aria-hidden="true"></i></a>
           </div>
         </div>
         <img src="/assets/khokan.jpg" class="p-1 card-img-top rounded-circle mx-auto d-block profile-img bg-light"
@@ -53,9 +64,6 @@
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                   <a routerLink="/firebase" routerLinkActive="active" href="#">Angular Firebase</a>
                   <span class="badge text-info border-info border badge-pill animated infinite pulse delay-4s">1</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <a routerLink="/register" routerLinkActive="active" href="#">Register</a>
                 </li>
               </ul>
         </div>

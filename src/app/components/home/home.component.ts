@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   data:Mydata[];
   menu1=false;
   menu2=false;
+  public dtoDetails : Mydata;
   constructor(public fireStore:AngularFirestore, public firebaseService: FirebaseService) {
     this.fireStore.collection('bugfix').snapshotChanges().pipe(
       map(actions => actions.map(a => {
@@ -27,6 +28,11 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit() {
+  }
+
+  detailsData(event,d:Mydata){
+    this.dtoDetails = d;
+    console.log(this.dtoDetails);
   }
 
 }

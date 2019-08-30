@@ -1,13 +1,14 @@
-<form [formGroup]="registerForm">
-  <div class="form-group">
-    <label>Email address</label>
-    <input type="email" formControlName="email" class="form-control" required>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+    </div>
+    <!-- Login Form -->
+    <form>
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="email">
+      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Register">
+    </form>
   </div>
-  <div class="form-group">
-    <label>Password</label>
-    <input type="password" class="form-control" formControlName="password" required>
-    <label class="error">{{errorMessage}}</label>
-    <label class="success">{{successMessage}}</label>
-  </div>
-  <button type="submit" (click)="tryRegister(registerForm.value)" class="btn btn-default">Register</button>
-</form>
+</div>

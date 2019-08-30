@@ -16,7 +16,7 @@ import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component:HomeComponent, pathMatch: 'full' },
+  { path: 'home', component:HomeComponent},
   { path: 'crud', component: CrudComponent },
   { path: 'random',component: RandomPrjComponent },
   { path: 'customs', component: CustomsComponent },
