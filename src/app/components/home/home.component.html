@@ -26,6 +26,20 @@
   </nav>
 </div> -->
 
+<a href="#" class="float" data-toggle="modal" data-target=".bd-example-modal-lg">
+  <i class="fa fa-plus my-float"></i>
+  </a>
+<!-- Large modal -->
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <app-add-data></app-add-data>
+    </div>
+  </div>
+</div>
+  
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -80,27 +94,57 @@
 
 
       <div *ngFor="let d of data">
-        <div class="row p-2 border-bottom" data-toggle="modal" data-target="#exampleModalCenter"
+        <div class="row p-2 border-bottom" (click)="detailsData($event,d);" data-toggle="modal" data-target="#myModal"
           [ngClass]="[d.status==='Done' ? 'done' : '',d.status==='Inprogress' ? 'inprogress' : '',d.status==='Deployed' ? 'deployed' : '']">
+
           <div class="col border-right">
             <div class="animated pulse">{{d.title | titlecase}}</div>
           </div>
-          <div class="col border-right">{{d.description | titlecase}}</div>
-          <div (click)="detailsData($event,d);" class="col border-right">details</div>
+          <div class="col border-right block text-truncate">{{d.description | titlecase}}</div>
           <div class="col border-right infinite"
             [ngClass]="[d.status==='Done' ? 'done' : '',d.status==='Inprogress' ? 'animated flash' : '',d.status==='Deployed' ? 'deployed' : '']">
             {{d.status| titlecase}}</div>
         </div>
         <!-- Modal -->
-        <div class="modal fade"  id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document" *ngFor="let details of dtoDetails">
+        <!-- <div class="modal fade"  id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" *ngIf="detailState && dtoDetails.id == d.id">
+          <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-              Test
+              {{d.title}}
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Modal -->
+        <div class="row">
+          <div class="modal fade" id="myModal" role="dialog" *ngIf="detailState && dtoDetails.id == d.id">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">{{d.title| titlecase}}</h4>
+                </div>
+                <div class="modal-body">
+                  <p>{{d.description}}</p>
+                </div>
+                <div class="modal-footer">
+                  <div class="row w-100">
+                    <div class="col">
+                      <button type="button" class="btn infinite" [ngClass]="[d.status==='Done' ? 'done' : '',d.status==='Inprogress' ? 'animated flash inprogress' : '',d.status==='Deployed' ? 'deployed deployed' : '']">{{d.status}}</button>
+                    </div>
+                    <div class="col-8">
+                      <button type="button" class="btn btn-default float-right" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
+
+
       </div>
     </div>
   </div>
-
 </div>
