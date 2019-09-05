@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { FirebaseService } from '../../services/firebase.service';
 import { Mydata } from '../../models/mydata';
 import { map } from 'rxjs/operators';
+import { database } from 'firebase';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,8 @@ export class HomeComponent implements OnInit {
   data:Mydata[];
   menu1=false;
   menu2=false;
+  searchText;
+  filterData= this.data;
   detailState:boolean=false;
   public dtoDetails : Mydata[];
   constructor(public fireStore:AngularFirestore, public firebaseService: FirebaseService) {
@@ -24,7 +27,7 @@ export class HomeComponent implements OnInit {
         return { id, ...data };
       }))
     ).subscribe( data => {
-      this.data = data;
+      this.filterData = data;
     });
    }
 
@@ -35,6 +38,12 @@ export class HomeComponent implements OnInit {
     this.dtoDetails = d;
     this.detailState=true;
     console.log(this.dtoDetails);
+  }
+
+  dataChanged(value){
+      this.filterData = this.data.filter(d=>{
+        d.status===value;
+      });
   }
 
 }

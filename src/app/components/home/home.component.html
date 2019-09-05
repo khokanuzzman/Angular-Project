@@ -41,7 +41,7 @@
   
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">BugFix</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -57,33 +57,14 @@
       <li class="nav-item">
         <a routerLink="/register" class="nav-link" href="javascript:void(0);">Register</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Dropdown link
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
     </ul>
   </div>
   <div class="btn-group">
-    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-      aria-expanded="false">
-      Right-aligned menu
-    </button>
-    <div class="dropdown-menu dropdown-menu-right">
-      <button class="dropdown-item" type="button">Action</button>
-      <button class="dropdown-item" type="button">Another action</button>
-      <button class="dropdown-item" type="button">Something else here</button>
-    </div>
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" placeholder="search" autocomplete="off">
   </div>
 </nav>
 
-<div class="container-fluid" *ngIf="data?.length>0; else noData">
+<div class="container-fluid" *ngIf="filterData?.length>0; else noData">
   <div class="row">
     <div class="col">
       <div class="row text-center text-monospace text-white font-weight-bold bg-info">
@@ -93,7 +74,7 @@
       </div>
 
 
-      <div *ngFor="let d of data">
+      <div *ngFor="let d of filterData | filter:searchText">
         <div class="row p-2 border-bottom" (click)="detailsData($event,d);" data-toggle="modal" data-target="#myModal"
           [ngClass]="[d.status==='Done' ? 'done' : '',d.status==='Inprogress' ? 'inprogress' : '',d.status==='Deployed' ? 'deployed' : '']">
 
@@ -133,7 +114,7 @@
                       <button type="button" class="btn infinite" [ngClass]="[d.status==='Done' ? 'done' : '',d.status==='Inprogress' ? 'animated flash inprogress' : '',d.status==='Deployed' ? 'deployed deployed' : '']">{{d.status}}</button>
                     </div>
                     <div class="col-8">
-                      <button type="button" class="btn btn-default float-right" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-danger float-right" data-dismiss="modal">Close</button>
                     </div>
                   </div>
                 </div>

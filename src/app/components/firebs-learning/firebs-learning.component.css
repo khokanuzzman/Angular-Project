@@ -21,3 +21,16 @@
 .edit-panel{
     position: relative;
 }
+
+.float{
+    position:fixed;
+    top: 230px;
+	right:40px;
+	color:#FFF;
+	text-align:center;
+    z-index: 999999;
+}
+
+.my-float{
+	margin-top:22px;
+}

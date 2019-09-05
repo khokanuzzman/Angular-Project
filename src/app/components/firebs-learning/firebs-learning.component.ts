@@ -16,7 +16,7 @@ export class FirebsLearningComponent implements OnInit {
   success = false;
   editState: boolean = false;
   dtoEdit : Mydata;
-
+  searchText;
   status: any = ['Inprogress', 'Deployed', 'Done', 'Test In progress', 'Test Done'];
   
   data:Mydata[];

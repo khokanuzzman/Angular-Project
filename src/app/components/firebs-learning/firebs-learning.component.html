@@ -11,6 +11,12 @@
     <app-add-data></app-add-data>
   </div>
 </div>
+
+
+  <div class="btn-group float">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" placeholder="search" autocomplete="off">
+  </div>
+
 <div class="row">
   <div class="col">
     <div *ngIf="success" role="alert" aria-live="assertive" aria-atomic="true" class="toast">
@@ -24,14 +30,14 @@
         Your Data Updated Successfully
       </div>
     </div>
-    <div class="container-fluid" *ngIf="data?.length>0; else noData">
+    <div class="container" *ngIf="data?.length>0; else noData" style="height:18em; overflow-x: auto;">
       <div class="row text-center text-monospace text-white font-weight-bold bg-info">
         <div class="col">Task Title</div>
         <div class="col">Description</div>
         <div class="col">Status</div>
         <div class="col">Action</div>
       </div>
-      <div class="row bg-warning text-dark p-2 border-bottom" *ngFor="let d of data" id="{{d.id}}">
+      <div class="row bg-warning text-dark p-2 border-bottom" *ngFor="let d of data | filter:searchText" id="{{d.id}}">
         <div class="col border-right">
           <div class="animated pulse">{{d.title}}</div>
         </div>
