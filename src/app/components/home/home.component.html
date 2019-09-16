@@ -28,17 +28,18 @@
 
 <a href="#" class="float" data-toggle="modal" data-target=".bd-example-modal-lg">
   <i class="fa fa-plus my-float"></i>
-  </a>
+</a>
 <!-- Large modal -->
 
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <app-add-data></app-add-data>
     </div>
   </div>
 </div>
-  
+
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
   <a class="navbar-brand" href="#">BugFix</a>
@@ -58,33 +59,39 @@
         <a routerLink="/register" class="nav-link" href="javascript:void(0);">Register</a>
       </li>
       <li class="nav-item dropdown has-mega-menu" style="position:static;">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+          aria-expanded="false">Layouts</a>
 
         <div class="dropdown-menu" style="width:100%">
-            <div class="px-0 container">
-                <div class="row">
-                    <div class="col-1">
-                        <img class="img-thumbnail" src="https://cdn2.iconfinder.com/data/icons/business-and-internet/512/Grid-512.png" alt="">
-                    </div>
-                    <div class="col-1">
-                      <img class="img-thumbnail" src="https://cdn2.iconfinder.com/data/icons/business-and-internet/512/Grid-512.png" alt="">
-                    </div>
-                  <div class="col-1">
-                    <img class="img-responsive img-thumbnail" src="https://cdn2.iconfinder.com/data/icons/business-and-internet/512/Grid-512.png" alt="">
-                    </div>
-                </div>
+          <div class="px-0  pl-2 container">
+            <div class="row">
+              <div class="col-1">
+                <img (click)="layoutOne();" class="img-thumbnail"
+                  src="https://cdn1.iconfinder.com/data/icons/griddler-layouts/100/layout-display-view-grid-4x4-512.png"
+                  alt="">
+              </div>
+              <div class="col-1">
+                <img (click)="layoutTwo()" class="img-thumbnail"
+                  src="https://cdn2.iconfinder.com/data/icons/business-and-internet/512/Grid-512.png" alt="">
+              </div>
+              <div class="col-1">
+                <img class="img-responsive img-thumbnail"
+                  src="https://cdn2.iconfinder.com/data/icons/business-and-internet/512/Grid-512.png" alt="">
+              </div>
             </div>
+          </div>
         </div>
-    </li>
+      </li>
     </ul>
   </div>
   <div class="btn-group">
-    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" placeholder="search" autocomplete="off">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" placeholder="search"
+      autocomplete="off">
   </div>
 </nav>
 
 <div class="container-fluid" *ngIf="filterData?.length>0; else noData">
-  <div class="row">
+  <div class="row animated fadeIn" *ngIf="layout_one">
     <div class="col">
       <div class="row text-center text-monospace text-white font-weight-bold bg-info">
         <div class="col">Task Title</div>
@@ -125,12 +132,13 @@
                   <h4 class="modal-title">{{d.title| titlecase}}</h4>
                 </div>
                 <div class="modal-body">
-                  <p>{{d.description}}</p>
+                  <p class="block text-truncate">{{d.description}}</p>
                 </div>
                 <div class="modal-footer">
                   <div class="row w-100">
                     <div class="col">
-                      <button type="button" class="btn infinite" [ngClass]="[d.status==='Done' ? 'done' : '',d.status==='Inprogress' ? 'animated flash inprogress' : '',d.status==='Deployed' ? 'deployed deployed' : '']">{{d.status}}</button>
+                      <button type="button" class="btn infinite"
+                        [ngClass]="[d.status==='Done' ? 'done' : '',d.status==='Inprogress' ? 'animated flash inprogress' : '',d.status==='Deployed' ? 'deployed deployed' : '']">{{d.status}}</button>
                     </div>
                     <div class="col-8">
                       <button type="button" class="btn btn-danger float-right" data-dismiss="modal">Close</button>
@@ -141,6 +149,20 @@
 
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row animated fadeIn" *ngIf="layout_two">
+    <div class="col" *ngFor="let d of filterData | filter:searchText">
+      <div class="card">
+        <div class="card-header">
+          {{d.status| titlecase}}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{d.title| titlecase}}</h5>
+          <p class="card-text">{{d.description | titlecase}}</p>
+          <a href="#" class="btn btn-primary">{{d.status| titlecase}}</a>
         </div>
       </div>
     </div>

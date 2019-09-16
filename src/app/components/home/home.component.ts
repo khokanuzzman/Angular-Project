@@ -18,6 +18,10 @@ export class HomeComponent implements OnInit {
   searchText;
   filterData= this.data;
   detailState:boolean=false;
+  layout_one:boolean=true;
+  layout_two:boolean=false;
+  layout_three:boolean=false;
+
   public dtoDetails : Mydata[];
   constructor(public fireStore:AngularFirestore, public firebaseService: FirebaseService) {
     this.fireStore.collection('bugfix').snapshotChanges().pipe(
@@ -44,6 +48,20 @@ export class HomeComponent implements OnInit {
       this.filterData = this.data.filter(d=>{
         d.status===value;
       });
+  }
+
+  layoutOne(){
+    this.layout_one=true;
+    this.layout_two=false;
+    this.layout_three=false;
+  }
+  layoutTwo(){
+    this.layout_two=true;
+    this.layout_one=false;
+    this.layout_three=false;
+  }
+  layoutThree(){
+
   }
 
 }
