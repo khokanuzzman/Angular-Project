@@ -43,6 +43,16 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+// popup modal
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatButtonModule} from '@angular/material/button';
+
+// checkbox
+import {MatCheckboxModule} from '@angular/material/checkbox';
+// add indigo css
+
+
 
 @NgModule({
   declarations: [
@@ -82,6 +92,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatCardModule,
     MatSidenavModule,
     BrowserAnimationsModule,
+    MatBottomSheetModule,
+    MatExpansionModule,
+    MatButtonModule,
+    MatCheckboxModule
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent],

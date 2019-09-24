@@ -14,6 +14,7 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  panelOpenState = false;
   showFiller = false;
   data:Mydata[];
   menu1=false;

@@ -1,4 +1,4 @@
-<mat-drawer-container class="example-container" autosize>
+<mat-drawer-container autosize>
   <mat-drawer #drawer class="sidenav" mode="side">
     <div class="container-fluid mt-2">
       <div class="row">
@@ -81,8 +81,8 @@
   <div class="example-sidenav-content">
     <div class="container-fluid">
       <div class="row">
-          <div class="col bg-light border border-info">
-              <img src="assets/icons8-direction-100.png" class="collapse-button" mat-button (click)="drawer.toggle()"/>
+          <div class="col bg-light border border-info pb-2">
+              <button mat-button  (click)="drawer.toggle()"><i class="fa fa-bars" aria-hidden="true"></i></button>
               <router-outlet></router-outlet>
             </div>
       </div>
