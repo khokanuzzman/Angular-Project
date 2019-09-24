@@ -1,49 +1,55 @@
-<div class="container-fluid mt-2">
-  <div class="row">
-    <div class="col-3" id="my-pro">
-      <div class="card bg-info pt-2">
-        <div class="row">
-          <div class="col-3">
-            <span class="p-1 text-light"  data-toggle="collapse" data-target="#collapseProfile" aria-expanded="true" >
-              <i class="fa fa-bars border-light"></i></span>
-          </div>
-          <div class="col-6">
-            <ul class="list-inline text-center">
-              <li class="list-inline-item"><a href="#"><i class="fa fa-facebook-f text-light"></i></a></li>
-              <li class="list-inline-item"><a href="#"><i class="fa fa-twitter text-light"></i></a></li>
-              <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin text-light"></i></a></li>
-            </ul>
-          </div>
-          <div class="col-1">
-            <ul class="list-inline text-secondary">
-              <li class="list-inline-item">
-                <a href="javascript:void(0);">
-                  <span  data-toggle="popover" title="Popover title"
-                   data-content="And here's some amazing content. It's very engaging. Right?" 
-                   class="float-right text-dark">
-                    <i class="fa fa-info-circle"></i></span>
-                </a>
-            </li>
-            </ul>
-          </div>
-          <div class="col-1">
-              <a href="javascript:void(0)" class="text-dark" routerLink="/home" ><i class="fa fa-home" aria-hidden="true"></i></a>
-          </div>
-        </div>
-        <img src="/assets/khokan.jpg" class="p-1 card-img-top rounded-circle mx-auto d-block profile-img bg-light"
-          alt="profile picture">
-            <div class="card-body p-0">
-                <div class="text-center text-light card-header p-2 m-0"  data-toggle="collapse" data-target="#collapsName">
-                  <a class="btn btn-info border-light animated bounce"><span><i class="fa fa-male"></i></span> Md khokanuzzaman</a>
-                </div>
-                <p class="font-weight-lighter font-italic p-2 text-monospace collapse alert alert-info" role="alert" id="collapsName"><small>Here i have developed Angular Test
-                    Application for practice</small></p>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <div class="container-fluid mt-2">
+      <div class="row">
+        <div class="col" id="my-pro">
+          <div class="card bg-info pt-2">
+            <div class="row">
+              <div class="col-3">
+                <span class="p-1 text-light" data-toggle="collapse" data-target="#collapseProfile" aria-expanded="true">
+                  <i class="fa fa-bars border-light"></i></span>
               </div>
-              <div id="collapseProfile" class="collapse show" aria-labelledby="headingOne" data-parent="#my-pro">
+              <div class="col-6">
+                <ul class="list-inline text-center">
+                  <li class="list-inline-item"><a href="#"><i class="fa fa-facebook-f text-light"></i></a></li>
+                  <li class="list-inline-item"><a href="#"><i class="fa fa-twitter text-light"></i></a></li>
+                  <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin text-light"></i></a></li>
+                </ul>
+              </div>
+              <div class="col-1">
+                <ul class="list-inline text-secondary">
+                  <li class="list-inline-item">
+                    <a href="javascript:void(0);">
+                      <span data-toggle="popover" title="Popover title"
+                        data-content="And here's some amazing content. It's very engaging. Right?"
+                        class="float-right text-dark">
+                        <i class="fa fa-info-circle"></i></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-1">
+                <a href="javascript:void(0)" class="text-dark" routerLink="/home"><i class="fa fa-home"
+                    aria-hidden="true"></i></a>
+              </div>
+            </div>
+            <img src="/assets/khokan.jpg" class="p-1 card-img-top rounded-circle mx-auto d-block profile-img bg-light"
+              alt="profile picture">
+            <div class="card-body p-0">
+              <div class="text-center text-light card-header p-2 m-0" data-toggle="collapse" data-target="#collapsName">
+                <a class="btn btn-info border-light animated bounce"><span><i class="fa fa-male"></i></span> Md
+                  khokanuzzaman</a>
+              </div>
+              <p class="font-weight-lighter font-italic p-2 text-monospace collapse alert alert-info" role="alert"
+                id="collapsName"><small>Here i have developed Angular Test
+                  Application for practice</small></p>
+            </div>
+            <div id="collapseProfile" class="collapse show" aria-labelledby="headingOne" data-parent="#my-pro">
               <ul class="list-group">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                   <a routerLink="/random" routerLinkActive="active">Angular Random</a>
-                  <span class="badge  text-info border-info border badge-pill animated infinite pulse delay-2s">14</span>
+                  <span
+                    class="badge  text-info border-info border badge-pill animated infinite pulse delay-2s">14</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                   <a routerLink="/crud" routerLinkActive="active">Angular Crud Application</a>
@@ -66,11 +72,32 @@
                   <span class="badge text-info border-info border badge-pill animated infinite pulse delay-4s">1</span>
                 </li>
               </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-9 bg-light border border-info" style="overflow: hidden">
-        <router-outlet></router-outlet>
+  </mat-drawer>
+  <div class="example-sidenav-content">
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col bg-light border border-info">
+              <img src="assets/icons8-direction-100.png" class="collapse-button" mat-button (click)="drawer.toggle()"/>
+              <router-outlet></router-outlet>
+            </div>
+      </div>
     </div>
   </div>
-</div>
+  <!-- <mat-drawer-container class="example-container" autosize>
+      <mat-drawer #drawer class="example-sidenav" mode="side">
+        test
+      </mat-drawer>
+    
+      <div class="example-sidenav-content">
+        <button type="button" mat-button (click)="drawer.toggle()">
+          Toggle sidenav
+        </button>
+      </div>
+    
+    </mat-drawer-container>     -->
+</mat-drawer-container>

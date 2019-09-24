@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthenticationService } from '../../services/authentication.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { FirebaseService } from '../../services/firebase.service';
 import { Mydata } from '../../models/mydata';
 import { map } from 'rxjs/operators';
 import { database } from 'firebase';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+
 
 @Component({
   selector: 'app-home',
@@ -12,6 +14,7 @@ import { database } from 'firebase';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  showFiller = false;
   data:Mydata[];
   menu1=false;
   menu2=false;
@@ -44,6 +47,10 @@ export class HomeComponent implements OnInit {
       this.filterData = this.data.filter(d=>{
         d.status===value;
       });
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.filterData, event.previousIndex, event.currentIndex);
   }
 
 }

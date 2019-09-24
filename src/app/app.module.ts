@@ -12,7 +12,8 @@ import { CustomsComponent } from './components/customs/customs.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
-import { HttpModule } from '@angular/http';
+// import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { CrudOperationComponent } from './components/crud/crud-operation/crud-operation.component';
 import { DragdropComponent } from './components/dragdrop/dragdrop.component';
 import { FormsComponent } from './components/forms/forms.component';
@@ -34,6 +35,14 @@ import { HeaderComponent } from './components/header/header.component';
 // search module
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
+// drag and drop
+
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatCardModule} from '@angular/material/card';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -59,7 +68,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
-    HttpModule,
+    HttpClientModule,
     ResizableModule,
     FormsModule,
     ReactiveFormsModule,
@@ -67,7 +76,12 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     AngularFirestoreModule,
     AngularFireAuthModule,
     ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    DragDropModule,
+    MatMenuModule,
+    MatCardModule,
+    MatSidenavModule,
+    BrowserAnimationsModule,
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent],
