@@ -13,3 +13,17 @@ img.profile-img {
     .example-box{
         padding: 0!important;
     }
+
+
+
+
+    /* card */
+
+    /* .example-card {
+        max-width: 400px;
+      } */
+      
+      .example-header-image {
+        background-image: url('/assets/khokan.jpg');
+        background-size: cover;
+      }

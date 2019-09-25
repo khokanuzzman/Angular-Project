@@ -52,6 +52,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 // add indigo css
 
+// icon
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -95,7 +97,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatBottomSheetModule,
     MatExpansionModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatIconModule
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent],

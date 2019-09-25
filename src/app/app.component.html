@@ -6,8 +6,23 @@
           <div class="card bg-info pt-2">
             <div class="row">
               <div class="col-3">
-                <span class="p-1 text-light" data-toggle="collapse" data-target="#collapseProfile" aria-expanded="true">
-                  <i class="fa fa-bars border-light"></i></span>
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                  <mat-icon class="text-light">more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item>
+                    <mat-icon>account_circle</mat-icon>
+                    <span>Profile</span>
+                  </button>
+                  <button mat-menu-item disabled>
+                    <mat-icon>voicemail</mat-icon>
+                    <span>Check voice mail</span>
+                  </button>
+                  <button mat-menu-item>
+                    <mat-icon>notifications_off</mat-icon>
+                    <span>Disable alerts</span>
+                  </button>
+                </mat-menu>
               </div>
               <div class="col-6">
                 <ul class="list-inline text-center">
@@ -33,18 +48,14 @@
                     aria-hidden="true"></i></a>
               </div>
             </div>
-            <img src="/assets/khokan.jpg" class="p-1 card-img-top rounded-circle mx-auto d-block profile-img bg-light"
-              alt="profile picture">
-            <div class="card-body p-0">
-              <div class="text-center text-light card-header p-2 m-0" data-toggle="collapse" data-target="#collapsName">
-                <a class="btn btn-info border-light animated bounce"><span><i class="fa fa-male"></i></span> Md
-                  khokanuzzaman</a>
-              </div>
-              <p class="font-weight-lighter font-italic p-2 text-monospace collapse alert alert-info" role="alert"
-                id="collapsName"><small>Here i have developed Angular Test
-                  Application for practice</small></p>
-            </div>
-            <div id="collapseProfile" class="collapse show" aria-labelledby="headingOne" data-parent="#my-pro">
+            <mat-card mat-button mat-raised-button class="example-card">
+              <mat-card-header>
+                <button mat-fab mat-card-avatar class="example-header-image"></button>
+                <mat-card-title mat-raised-button mat-button>Md khokanuzzaman</mat-card-title>
+                <mat-card-subtitle>JSE at SQH</mat-card-subtitle>
+              </mat-card-header>
+            </mat-card>
+            <div id="collapseProfile" class="collapse show mt-2" aria-labelledby="headingOne" data-parent="#my-pro">
               <ul class="list-group">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                   <a routerLink="/random" routerLinkActive="active">Angular Random</a>
@@ -101,3 +112,4 @@
     
     </mat-drawer-container>     -->
 </mat-drawer-container>
+

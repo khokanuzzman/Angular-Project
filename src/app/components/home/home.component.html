@@ -92,17 +92,17 @@
           <div class="example-box" *ngFor="let d of filterData | filter:searchText" cdkDrag>
             <div class="row w-100 pt-2" data-toggle="modal" data-target="#myModal">
               <div class="col">
-                {{d.title}}
+                {{d.title | titlecase}}
               </div>
               <div class="col">
                 <mat-accordion>
                   <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                     <mat-expansion-panel-header>
                       <mat-panel-description>
-                        {{panelOpenState ? 'open' : 'closed'}}
+                        <div color="primary">{{panelOpenState ? 'Detail' : 'Detail'}}</div>
                       </mat-panel-description>
                     </mat-expansion-panel-header>
-                    <p>{{d.description}}</p>
+                    <p>{{d.description | titlecase}}</p>
                   </mat-expansion-panel>
                 </mat-accordion>
               </div>
