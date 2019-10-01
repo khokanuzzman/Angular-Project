@@ -12,11 +12,13 @@ import { FirebsLearningComponent } from './components/firebs-learning/firebs-lea
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { HomeComponent } from './components/home/home.component';
+import { CoverHomepageComponent } from './components/cover-homepage/cover-homepage.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/cover', pathMatch: 'full' },
   { path: 'home', component:HomeComponent},
+  { path: 'cover', component:CoverHomepageComponent},
   { path: 'crud', component: CrudComponent },
   { path: 'random',component: RandomPrjComponent },
   { path: 'customs', component: CustomsComponent },

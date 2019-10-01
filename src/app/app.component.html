@@ -1,115 +1,21 @@
-<mat-drawer-container autosize>
-  <mat-drawer #drawer class="sidenav" mode="side">
-    <div class="container-fluid mt-2">
-      <div class="row">
-        <div class="col" id="my-pro">
-          <div class="card bg-info pt-2">
-            <div class="row">
-              <div class="col-3">
-                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-                  <mat-icon class="text-light">more_vert</mat-icon>
-                </button>
-                <mat-menu #menu="matMenu">
-                  <button mat-menu-item>
-                    <mat-icon>account_circle</mat-icon>
-                    <span>Profile</span>
-                  </button>
-                  <button mat-menu-item disabled>
-                    <mat-icon>voicemail</mat-icon>
-                    <span>Check voice mail</span>
-                  </button>
-                  <button mat-menu-item>
-                    <mat-icon>notifications_off</mat-icon>
-                    <span>Disable alerts</span>
-                  </button>
-                </mat-menu>
-              </div>
-              <div class="col-6">
-                <ul class="list-inline text-center">
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-facebook-f text-light"></i></a></li>
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-twitter text-light"></i></a></li>
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin text-light"></i></a></li>
-                </ul>
-              </div>
-              <div class="col-1">
-                <ul class="list-inline text-secondary">
-                  <li class="list-inline-item">
-                    <a href="javascript:void(0);">
-                      <span data-toggle="popover" title="Popover title"
-                        data-content="And here's some amazing content. It's very engaging. Right?"
-                        class="float-right text-dark">
-                        <i class="fa fa-info-circle"></i></span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-1">
-                <a href="javascript:void(0)" class="text-dark" routerLink="/home"><i class="fa fa-home"
-                    aria-hidden="true"></i></a>
-              </div>
-            </div>
-            <mat-card mat-button mat-raised-button class="example-card">
-              <mat-card-header>
-                <button mat-fab mat-card-avatar class="example-header-image"></button>
-                <mat-card-title mat-raised-button mat-button>Md khokanuzzaman</mat-card-title>
-                <mat-card-subtitle>JSE at SQH</mat-card-subtitle>
-              </mat-card-header>
-            </mat-card>
-            <div id="collapseProfile" class="collapse show mt-2" aria-labelledby="headingOne" data-parent="#my-pro">
-              <ul class="list-group">
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <a routerLink="/random" routerLinkActive="active">Angular Random</a>
-                  <span
-                    class="badge  text-info border-info border badge-pill animated infinite pulse delay-2s">14</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <a routerLink="/crud" routerLinkActive="active">Angular Crud Application</a>
-                  <span class="badge border-info border text-info badge-pill animated infinite pulse delay-3s">2</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <a routerLink="/customs" routerLinkActive="active" href="#">customs</a>
-                  <span class="badge text-info border-info border badge-pill animated infinite pulse delay-4s">1</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <a routerLink="/dragdrop" routerLinkActive="active" href="#">Drag Drop</a>
-                  <span class="badge text-info border-info border badge-pill animated infinite pulse delay-4s">1</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <a routerLink="/contact" routerLinkActive="active" href="#">Angular forms</a>
-                  <span class="badge text-info border-info border badge-pill animated infinite pulse delay-4s">1</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <a routerLink="/firebase" routerLinkActive="active" href="#">Angular Firebase</a>
-                  <span class="badge text-info border-info border badge-pill animated infinite pulse delay-4s">1</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="container-fluid mt-2 p-0">
+  <mat-card class="p-0">
+  <div class="row">
+    <div class="col" id="my-pro">
+        <nav class="navbar navbar-light bg-light main-menu text-white">
+          <a class="navbar-brand">BugFix</a>
+          <form class="form-inline">
+            <button mat-button>Login</button>
+            <button mat-raised-button>Sign Up</button>
+          </form>
+        </nav>
     </div>
-  </mat-drawer>
-  <div class="example-sidenav-content">
-    <div class="container-fluid">
-      <div class="row">
-          <div class="col bg-light border border-info pb-2">
-              <button mat-button  (click)="drawer.toggle()"><i class="fa fa-bars" aria-hidden="true"></i></button>
-              <router-outlet></router-outlet>
-            </div>
-      </div>
+  
+  </div></mat-card>
+  <div class="row">
+    <div class="col bg-light pb-2">
+      <!-- <button mat-button  (click)="drawer.toggle()"><i class="fa fa-bars" aria-hidden="true"></i></button> -->
+      <router-outlet></router-outlet>
     </div>
   </div>
-  <!-- <mat-drawer-container class="example-container" autosize>
-      <mat-drawer #drawer class="example-sidenav" mode="side">
-        test
-      </mat-drawer>
-    
-      <div class="example-sidenav-content">
-        <button type="button" mat-button (click)="drawer.toggle()">
-          Toggle sidenav
-        </button>
-      </div>
-    
-    </mat-drawer-container>     -->
-</mat-drawer-container>
-
+</div>

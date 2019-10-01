@@ -54,6 +54,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 
 // icon
 import { MatIconModule } from '@angular/material/icon';
+import { CoverHomepageComponent } from './components/cover-homepage/cover-homepage.component';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { MatIconModule } from '@angular/material/icon';
     AuthComponent,
     LoginComponent,
     RegisterComponent,
-    HeaderComponent
+    HeaderComponent,
+    CoverHomepageComponent
   ],
   imports: [
     BrowserModule,
