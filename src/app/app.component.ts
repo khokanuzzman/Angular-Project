@@ -3,6 +3,7 @@ import { firestore } from 'firebase';
 import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Mydata } from './models/mydata';
+import { AuthenticationService } from './services/authentication.service';
 declare let $: any;
 
 @Component({
@@ -13,7 +14,7 @@ declare let $: any;
 export class AppComponent implements OnInit {
   title = 'Ng-Crud';
   items: Observable<Mydata[]>;
-  constructor(db: AngularFirestore) {
+  constructor(db: AngularFirestore, private  authService:  AuthenticationService) {
     this.items = db.collection('items').valueChanges();
   }
 

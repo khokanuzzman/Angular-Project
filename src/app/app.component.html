@@ -1,17 +1,25 @@
 <div class="container-fluid mt-2 p-0">
   <mat-card class="p-0">
-  <div class="row">
-    <div class="col" id="my-pro">
+    <div class="row">
+      <div class="col" id="my-pro">
         <nav class="navbar navbar-light bg-light main-menu text-white">
-          <a class="navbar-brand">BugFix</a>
+          <a routerLink="/cover" class="navbar-brand"><div class="font-weight-bold text-white float-left">Bu</div><div class="float-left swing animated delay-2s slow mt-2 text-warning font-weight-bold infinite">g</div><div class="font-weight-bold text-white">Fix</div></a>
           <form class="form-inline">
-            <button mat-button>Login</button>
-            <button mat-raised-button>Sign Up</button>
+            <span *ngIf="authService.isLoggedIn" class="nav-item">
+              <button  mat-raised-button (click)="authService.logout()">Logout</button>
+            </span>
+            <span *ngIf="!authService.isLoggedIn" class="nav-item">
+            <button routerLink="/login" mat-button>Login</button>
+          </span>
+          <span *ngIf="!authService.isLoggedIn" class="nav-item">
+            <button routerLink="/register" mat-raised-button>Sign Up</button>
+          </span>
           </form>
         </nav>
+      </div>
+
     </div>
-  
-  </div></mat-card>
+  </mat-card>
   <div class="row">
     <div class="col bg-light pb-2">
       <!-- <button mat-button  (click)="drawer.toggle()"><i class="fa fa-bars" aria-hidden="true"></i></button> -->

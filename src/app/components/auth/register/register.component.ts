@@ -8,6 +8,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  email: string;
+  password: string;
+
   public errorMessage:any;
   public successMessage:any;
   constructor(public authService:AuthenticationService) { }
@@ -21,17 +24,9 @@ export class RegisterComponent implements OnInit {
   });
   
   
-  tryRegister(value){
-    this.authService.doRegister(value)
-    .then(res => {
-      console.log(res);
-      this.errorMessage = "";
-      this.successMessage = "Your account has been created";
-    }, err => {
-      console.log(err);
-      this.errorMessage = err.message;
-      this.successMessage = "";
-    })
+  signup() {
+    this.authService.signup(this.email, this.password);
+    this.email = this.password = '';
   }
 
 }

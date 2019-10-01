@@ -40,38 +40,14 @@
   </div>
 </div>
 
-<div class="row">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
-    <a class="navbar-brand">Bugfix</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/login" class="nav-link" href="javascript:void(0);">Login</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/register" class="nav-link" href="javascript:void(0);">Register</a>
-        </li>
-      </ul>
-    </div>
-    <div class="btn-group">
-      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" placeholder="search"
-        autocomplete="off">
-    </div>
-  </nav>
+<div class="row mt-5">
+  <div class="col-12">
+            <input class="form-control mt-5 float-right" type="text" name="search" [(ngModel)]="searchText" placeholder="search"
+              autocomplete="off">
+  </div>  
 </div>
 
-
-
-
-
-<div class="container-fluid" *ngIf="filterData?.length>0; else noData">
+<div class="container-fluid mt-5" *ngIf="filterData?.length>0; else noData">
   <div class="row">
     <div class="col">
       <mat-accordion>
