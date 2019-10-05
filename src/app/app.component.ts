@@ -12,7 +12,7 @@ declare let $: any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Ng-Crud';
+  title = 'BugFix';
   items: Observable<Mydata[]>;
   constructor(db: AngularFirestore, public  authService:  AuthenticationService) {
     this.items = db.collection('items').valueChanges();

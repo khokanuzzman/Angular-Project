@@ -39,7 +39,7 @@
         <div class="col">Action</div>
         
       </div>
-      <div class="row bg-warning text-dark p-2 border-bottom" *ngFor="let d of data | filter:searchText" id="{{d.id}}">
+      <div class="row section-bg text-dark p-2 border-bottom" *ngFor="let d of data | filter:searchText" id="{{d.id}}">
         <div class="col border-right">
           <div class="animated pulse">{{d.title}}</div>
         </div>
@@ -47,8 +47,8 @@
         <div class="col border-right">{{d.status}}</div>
         <div class="col border-right">{{d.assignTo}}</div>
         <div class="col text-center">
-          <button (click)="editData($event,d);" class="btn btn-info" type="button">Edit</button>
-          <button (click)="deleteData($event,d);" class="btn btn-danger" type="button">Delete</button>
+          <button (click)="editData($event,d);" mat-raised-button type="button">Edit</button>
+          <button (click)="deleteData($event,d);" mat-raised-button  color="warn" type="button">Delete</button>
         </div>
         <div class="col-12 mt-2 animated bounce edit-panel" *ngIf="editState && dtoEdit.id == d.id"> 
           <i (click)="close()" class="fa fa-window-close close" aria-hidden="true"></i>
