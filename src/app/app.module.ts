@@ -56,6 +56,10 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { CoverHomepageComponent } from './components/cover-homepage/cover-homepage.component';
 
+// table
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -100,7 +104,9 @@ import { CoverHomepageComponent } from './components/cover-homepage/cover-homepa
     MatExpansionModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent],

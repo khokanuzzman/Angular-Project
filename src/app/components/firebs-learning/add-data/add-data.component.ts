@@ -12,15 +12,18 @@ export class AddDataComponent implements OnInit {
   form = new FormGroup({
     title: new FormControl(null, Validators.required),
     description: new FormControl(null, Validators.required),
-    status: new FormControl(null, Validators.required)
+    status: new FormControl(null, Validators.required),
+    assignTo:new FormControl(null, Validators.required)
   });
 
   Status: any = ['Inprogress', 'Deployed', 'Done', 'Test In progress', 'Test Done'];
+  assignList: any = ['Jahangir Alam', 'Ashraf Hasan', 'Zeeshan Adnan', 'Atequer', 'Shantanu Borua','Mehedi Hasan'];
 
   data: Mydata = {
     title: '',
     description: '',
-    status: ''
+    status: '',
+    assignTo:''
   }
   constructor(public firebaseService: FirebaseService) { }
 
@@ -28,13 +31,14 @@ export class AddDataComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.data.title != '' && this.data.description != '' && this.data.status != '') {
+    if (this.data.title != '' && this.data.description != '' && this.data.status != '' &&this.data.assignTo !='') {
       this.markFormGroupAsTouched(this.form);
       this.markFormGroupAsUnTouched(this.form);
       
       this.firebaseService.addData(this.form.value);
       this.data.title = '';
       this.data.description = '';
+      this.data.assignTo ='';
     }
   }
 

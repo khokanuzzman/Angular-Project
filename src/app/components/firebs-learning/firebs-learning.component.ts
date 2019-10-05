@@ -18,6 +18,7 @@ export class FirebsLearningComponent implements OnInit {
   dtoEdit : Mydata;
   searchText;
   status: any = ['Inprogress', 'Deployed', 'Done', 'Test In progress', 'Test Done'];
+  assignList: any = ['Jahangir Alam', 'Ashraf Hasan', 'Zeeshan Adnan', 'Atequer', 'Shantanu Borua','Mehedi Hasan'];
   
   data:Mydata[];
   constructor(public fireStore:AngularFirestore, public firebaseService: FirebaseService) { 
@@ -39,7 +40,8 @@ export class FirebsLearningComponent implements OnInit {
   editForm = new FormGroup({
     title: new FormControl(null, Validators.required),
     description: new FormControl(null, Validators.required),
-    editStatus: new FormControl(null, Validators.required)
+    editStatus: new FormControl(null, Validators.required),
+    assignTo: new FormControl(null,Validators.required)
   });
 
 

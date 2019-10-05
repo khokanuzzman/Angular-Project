@@ -35,7 +35,9 @@
         <div class="col">Task Title</div>
         <div class="col">Description</div>
         <div class="col">Status</div>
+        <div class="col">Assign To</div>
         <div class="col">Action</div>
+        
       </div>
       <div class="row bg-warning text-dark p-2 border-bottom" *ngFor="let d of data | filter:searchText" id="{{d.id}}">
         <div class="col border-right">
@@ -43,6 +45,7 @@
         </div>
         <div class="col border-right">{{d.description}}</div>
         <div class="col border-right">{{d.status}}</div>
+        <div class="col border-right">{{d.assignTo}}</div>
         <div class="col text-center">
           <button (click)="editData($event,d);" class="btn btn-info" type="button">Edit</button>
           <button (click)="deleteData($event,d);" class="btn btn-danger" type="button">Delete</button>
@@ -57,7 +60,6 @@
                     <label for="title">Task Title</label>
                     <input id="update-title" formControlName="title" [(ngModel)]="d.title" class="form-control"
                       type="text" name="update-title">
-                      <div>{{d.title}}</div>
                   </div>
                 </div>
                 <div class="col">
@@ -69,11 +71,25 @@
                 </div>
                 <div class="col">
                   <div class="form-group">
-                      <label for="editStatus">Description</label>
+                      <label for="editStatus">Status</label>
                     <select class="custom-select mr-sm-2" id="editStatus" name="status" formControlName="editStatus"
                       [(ngModel)]="d.status">
                       <option value="" disabled>Chose status</option>
                       <option *ngFor="let stats of status" [ngValue]="stats">{{stats}}</option>
+                    </select>
+
+                    <!-- <label for="status">Description</label>
+                        <input id="update-description"  formControlName="description"  [(ngModel)]="d.description" class="form-control" type="text"
+                          name="update-description"> -->
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                      <label for="editAssignTo">Assign To</label>
+                    <select class="custom-select mr-sm-2" id="editAssignTo" name="editAssignTo" formControlName="assignTo"
+                      [(ngModel)]="d.assignTo">
+                      <option value="" disabled>Chose Opton</option>
+                      <option *ngFor="let assign of assignList" [ngValue]="assign">{{assign}}</option>
                     </select>
 
                     <!-- <label for="status">Description</label>

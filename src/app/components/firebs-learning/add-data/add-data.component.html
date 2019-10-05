@@ -8,53 +8,63 @@
             <div class="col">
               <div class="form-group">
                 <label for="title">Task Title</label>
-                <input 
-                 formControlName="title"
-                 id="title" [(ngModel)]="data.title" 
-                 class="form-control" 
-                 type="text" 
-                 name="title">
+                <input formControlName="title" id="title" [(ngModel)]="data.title" class="form-control" type="text"
+                  name="title">
 
-                 <div *ngIf="form.get('title').touched && form.get('title').invalid" class="alert alert-danger" role="alert">
-                    Title is required
-                  </div>
+                <div *ngIf="form.get('title').touched && form.get('title').invalid" class="alert alert-danger"
+                  role="alert">
+                  Title is required
+                </div>
               </div>
             </div>
             <div class="col">
               <div class="form-group">
                 <label for="description">Description</label>
-                <input
-                formControlName="description" 
-                id="description"  
-                [(ngModel)]="data.description"  
-                class="form-control" 
-                type="text" 
-                name="description">
+                <input formControlName="description" id="description" [(ngModel)]="data.description"
+                  class="form-control" type="text" name="description">
 
-              <div *ngIf="form.get('description').touched && form.get('description').invalid" class="alert alert-danger" role="alert">
+                <div *ngIf="form.get('description').touched && form.get('description').invalid"
+                  class="alert alert-danger" role="alert">
                   Description is required
-              </div>
-              
+                </div>
+
               </div>
             </div>
             <div class="col">
               <div class="form-group">
                 <label for="description">Status</label>
-                <select class="custom-select mr-sm-2" id="status" name="status" formControlName="status" [(ngModel)]="data.status">
-                    <option value="" disabled>Chose status</option>
-                    <option *ngFor="let stats of Status" [ngValue]="stats">{{stats}}</option>
-                  </select>
+                <select class="custom-select mr-sm-2" id="status" name="status" formControlName="status"
+                  [(ngModel)]="data.status">
+                  <option value="" disabled>Chose status</option>
+                  <option *ngFor="let stats of Status" [ngValue]="stats">{{stats}}</option>
+                </select>
 
-              <div *ngIf="form.get('status').touched && form.get('status').invalid" class="alert alert-danger" role="alert">
+                <div *ngIf="form.get('status').touched && form.get('status').invalid" class="alert alert-danger"
+                  role="alert">
                   Select Valid status!
+                </div>
               </div>
-              
+            </div>
+            <!-- assign to -->
+            <div class="col">
+              <div class="form-group">
+                <label for="description">Assign To</label>
+                <select class="custom-select mr-sm-2" id="assignTo" name="assignTo" formControlName="assignTo"
+                  [(ngModel)]="data.assignTo">
+                  <option value="" disabled>Chose Option</option>
+                  <option *ngFor="let assign of assignList" [ngValue]="assign">{{assign}}</option>
+                </select>
+
+                <div *ngIf="form.get('assignTo').touched && form.get('assignTo').invalid" class="alert alert-danger"
+                  role="alert">
+                  Select Valid status!
+                </div>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col">
-                <input class="btn btn-light" type="submit" value="Submit" name="">
+              <input class="btn btn-light" type="submit" value="Submit" name="">
             </div>
           </div>
         </form>

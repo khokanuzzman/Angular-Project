@@ -1,4 +1,4 @@
-<div class="container-fluid mt-2 p-0">
+<div class="container-fluid mt-2 p-0 overflow-hidden">
   <mat-card class="p-0">
     <div class="row">
       <div class="col" id="my-pro">
@@ -6,7 +6,30 @@
           <a routerLink="/cover" class="navbar-brand"><div class="font-weight-bold text-white float-left">Bu</div><div class="float-left swing animated delay-2s slow mt-2 text-warning font-weight-bold infinite">g</div><div class="font-weight-bold text-white">Fix</div></a>
           <form class="form-inline">
             <span *ngIf="authService.isLoggedIn" class="nav-item">
-              <button  mat-raised-button (click)="authService.logout()">Logout</button>
+                <span *ngIf="authService.isLoggedIn" class="nav-item">
+                    <button routerLink="/home" mat-button><mat-icon>home</mat-icon></button>
+                  </span>
+              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button  routerLink="/firebase" mat-menu-item>
+                    <mat-icon>bug_report</mat-icon>
+                        <span mat-button>Manage</span>
+                  </button>
+                  <button mat-menu-item disabled>
+                    <mat-icon>voicemail</mat-icon>
+                    <span>Check voice mail</span>
+                  </button>
+                  <button mat-menu-item>
+                    <mat-icon>notifications_off</mat-icon>
+                    <span>Disable alerts</span>
+                  </button>
+                  <button  (click)="authService.logout()" mat-menu-item>
+                      <mat-icon>exit_to_app</mat-icon>
+                      <span color="warn">Logout</span>
+                    </button>
+                </mat-menu>
             </span>
             <span *ngIf="!authService.isLoggedIn" class="nav-item">
             <button routerLink="/login" mat-button>Login</button>

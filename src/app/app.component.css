@@ -34,7 +34,7 @@ img.profile-img {
       .main-menu{
         background: #20716a!important;
         position: fixed;
-        z-index: 99999999;
+        z-index: 1;
         width: 100%;
         top: 0;
         left: 0;

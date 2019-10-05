@@ -3,4 +3,5 @@ export interface Mydata {
     title?:string;
     description?:string;
     status?:string;
+    assignTo?:string;
 }

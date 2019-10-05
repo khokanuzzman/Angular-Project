@@ -26,28 +26,38 @@
   </nav>
 </div> -->
 
-<a href="#" class="float" data-toggle="modal" data-target=".bd-example-modal-lg">
-  <i class="fa fa-plus my-float"></i>
-</a>
-<!-- Large modal -->
+<div class="container">
+  <div class="col">
+    <a href="#" class="float" data-toggle="modal" data-target=".bd-example-modal-lg">
+      <i class="fa fa-plus my-float"></i>
+    </a>
+    <!-- Large modal -->
 
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <app-add-data></app-add-data>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <app-add-data></app-add-data>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col">
+
+      </div>
+      <div class="col">
+
+      </div>
+      <div class="col pr-0">
+        <input class="form-control mt-5 float-right" type="text" name="search" [(ngModel)]="searchText"
+          placeholder="search" autocomplete="off">
+      </div>
     </div>
   </div>
 </div>
 
-<div class="row mt-5">
-  <div class="col-12">
-            <input class="form-control mt-5 float-right" type="text" name="search" [(ngModel)]="searchText" placeholder="search"
-              autocomplete="off">
-  </div>  
-</div>
-
-<div class="container-fluid mt-5" *ngIf="filterData?.length>0; else noData">
+<div class="container mt-2" *ngIf="filterData?.length>0; else noData">
   <div class="row">
     <div class="col">
       <mat-accordion>
@@ -56,6 +66,7 @@
             <div mat-button>Task Title</div>
           </div>
           <div class="col example-list">Description</div>
+          <div class="col example-list">Assign To</div>
           <div class="col example-list">Status</div>
         </div>
       </mat-accordion>
@@ -82,8 +93,11 @@
                   </mat-expansion-panel>
                 </mat-accordion>
               </div>
+              <div class="col p-0">
+                <button class="w-100" mat-button color="primary">{{d.assignTo}}</button>
+              </div>
               <div class="col">
-                <button mat-button color="primary">{{d.status}}</button>
+                <button class="w-100"  mat-button color="primary">{{d.status}}</button>
               </div>
             </div>
             <!-- Modal -->
@@ -126,4 +140,3 @@
     There is no data in the list
   </div>
 </ng-template>
-

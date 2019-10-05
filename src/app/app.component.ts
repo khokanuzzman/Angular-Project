@@ -14,7 +14,7 @@ declare let $: any;
 export class AppComponent implements OnInit {
   title = 'Ng-Crud';
   items: Observable<Mydata[]>;
-  constructor(db: AngularFirestore, private  authService:  AuthenticationService) {
+  constructor(db: AngularFirestore, public  authService:  AuthenticationService) {
     this.items = db.collection('items').valueChanges();
   }
 
