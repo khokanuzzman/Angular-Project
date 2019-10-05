@@ -59,7 +59,13 @@ import { CoverHomepageComponent } from './components/cover-homepage/cover-homepa
 // table
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material';
+import { BottomsheetComponent } from './components/bottomsheet/bottomsheet.component';
+// bottom sheet
+import {MatListModule} from '@angular/material/list';
+import { OverlayModule } from "@angular/cdk/overlay";
 
+// progress bar
+import {MatProgressBarModule} from '@angular/material'
 
 @NgModule({
   declarations: [
@@ -80,7 +86,8 @@ import { MatPaginatorModule } from '@angular/material';
     LoginComponent,
     RegisterComponent,
     HeaderComponent,
-    CoverHomepageComponent
+    CoverHomepageComponent,
+    BottomsheetComponent
   ],
   imports: [
     BrowserModule,
@@ -106,10 +113,14 @@ import { MatPaginatorModule } from '@angular/material';
     MatCheckboxModule,
     MatIconModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatListModule,
+    OverlayModule,
+    MatProgressBarModule
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent],
+  entryComponents: [BottomsheetComponent],
 
 })
 export class AppModule { }

@@ -28,9 +28,7 @@
 
 <div class="container">
   <div class="col">
-    <a href="#" class="float" data-toggle="modal" data-target=".bd-example-modal-lg">
-      <i class="fa fa-plus my-float"></i>
-    </a>
+      <button  class="float" mat-fab (click)="openBottomSheet()" color="primary">Add</button>
     <!-- Large modal -->
 
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
@@ -44,7 +42,7 @@
 
     <div class="row mt-5">
       <div class="col">
-
+        <button class="mt-5 " mat-raised-button (click)="openBottomSheet()">Open file</button>
       </div>
       <div class="col">
 

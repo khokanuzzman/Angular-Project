@@ -6,6 +6,8 @@ import { Mydata } from '../../models/mydata';
 import { map } from 'rxjs/operators';
 import { database } from 'firebase';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
+import { BottomsheetComponent } from '../bottomsheet/bottomsheet.component';
 
 
 @Component({
@@ -23,7 +25,7 @@ export class HomeComponent implements OnInit {
   filterData= this.data;
   detailState:boolean=false;
   public dtoDetails : Mydata[];
-  constructor(public fireStore:AngularFirestore, public firebaseService: FirebaseService) {
+  constructor(public fireStore:AngularFirestore, public firebaseService: FirebaseService,private _bottomSheet: MatBottomSheet) {
     this.fireStore.collection('bugfix').snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Mydata;
@@ -52,6 +54,9 @@ export class HomeComponent implements OnInit {
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.filterData, event.previousIndex, event.currentIndex);
+  }
+  openBottomSheet(): void {
+    this._bottomSheet.open(BottomsheetComponent);
   }
 
 }
