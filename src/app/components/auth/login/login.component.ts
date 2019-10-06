@@ -10,6 +10,7 @@ export class LoginComponent implements OnInit {
 
   constructor(public  authService:  AuthenticationService) { }
   ngOnInit() {
+    console.log(this.authService.afAuth.authState.subscribe)
   }
 
 }
