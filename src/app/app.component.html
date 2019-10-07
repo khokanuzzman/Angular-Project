@@ -4,6 +4,7 @@
       <div class="col" id="my-pro">
         <nav class="navbar navbar-light bg-light main-menu text-white">
           <a routerLink="/cover" class="navbar-brand"><div class="font-weight-bold text-white float-left">Bu</div><div class="float-left swing animated delay-2s slow mt-2 text-warning font-weight-bold infinite">g</div><div class="font-weight-bold text-white">Fix</div></a>
+          <span class="text-warning text-monospace" mat-raised-button>Under Construction</span>
           <form class="form-inline">
             <span *ngIf="authService.isLoggedIn" class="nav-item">
                 <span *ngIf="authService.isLoggedIn" class="nav-item">
@@ -14,12 +15,16 @@
                 </button>
                 <mat-menu #menu="matMenu">
                   <button  routerLink="/firebase" mat-menu-item>
+                    <mat-icon>account_circle</mat-icon>
+                        <span mat-button>Profile</span>
+                  </button>
+                  <button  routerLink="/firebase" mat-menu-item>
                     <mat-icon>bug_report</mat-icon>
                         <span mat-button>Manage</span>
                   </button>
                   <button mat-menu-item disabled>
                     <mat-icon>voicemail</mat-icon>
-                    <span>Check voice mail</span>
+                    <span>Layout</span>
                   </button>
                   <button mat-menu-item>
                     <mat-icon>notifications_off</mat-icon>

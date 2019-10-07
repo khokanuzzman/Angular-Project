@@ -1,7 +1,7 @@
 <div class="row">
-  <div class="col-12">
+  <div class="col-12 mt-5">
     <div class="card bar-bgcolor text-white">
-      <h5 class="card-header">Add data</h5>
+      <h5 class="card-header">Creat Task</h5>
       <div class="card-body">
         <form (ngSubmit)="onSubmit();" [formGroup]="form">
           <div class="row">
@@ -39,7 +39,7 @@
                   <option *ngFor="let stats of Status" [ngValue]="stats">{{stats}}</option>
                 </select>
 
-                <div *ngIf="form.get('status').touched && form.get('status').invalid" class="alert alert-danger"
+                <div *ngIf="form.get('status').invalid" class="alert alert-danger"
                   role="alert">
                   Select Valid status!
                 </div>
@@ -55,9 +55,9 @@
                   <option *ngFor="let assign of assignList" [ngValue]="assign">{{assign}}</option>
                 </select>
 
-                <div *ngIf="form.get('assignTo').touched && form.get('assignTo').invalid" class="alert alert-danger"
+                <div *ngIf="form.get('assignTo').invalid" class="alert alert-danger"
                   role="alert">
-                  Select Valid status!
+                  Select Valid option!
                 </div>
               </div>
             </div>
