@@ -14,9 +14,9 @@
                   <mat-icon>more_vert</mat-icon>
                 </button>
                 <mat-menu #menu="matMenu">
-                  <button  routerLink="/firebase" mat-menu-item>
+                  <button (click)="ProfileUserInfo()" mat-menu-item>
                     <mat-icon>account_circle</mat-icon>
-                        <span mat-button>Profile</span>
+                        <span mat-button >{{userName}}</span>
                   </button>
                   <button  routerLink="/firebase" mat-menu-item>
                     <mat-icon>bug_report</mat-icon>

@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { firestore } from 'firebase';
+import { firestore, User } from 'firebase';
 import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Mydata } from './models/mydata';
@@ -12,25 +12,22 @@ declare let $: any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  progresValue:number;
- rangeArray:number[];
+
   title = 'BugFix';
+  user: Observable<firebase.User>;
+  userName: string;
   items: Observable<Mydata[]>;
   constructor(db: AngularFirestore, public  authService:  AuthenticationService) {
+    this.user = authService.afAuth.authState;
     this.items = db.collection('items').valueChanges();
-    this.progresValue =0;
-  this.rangeArray= new Array(100);
+    this.user.subscribe((user: firebase.User) => {
+      if (user !== null) {
+        this.userName = user.email;
+        console.log(this.userName);
+      }
+    });
   }
-  @HostListener("window:scroll", [])
-  onWindowScroll() {
-   var element = document.documentElement, 
-   body = document.body,
-   scrollTop = 'scrollTop',
-   scrollHeight = 'scrollHeight';
-   this.progresValue = 
-   (element[scrollTop]||body[scrollTop]) / 
-   ((element[scrollHeight]||body[scrollHeight]) - element.clientHeight) * 100;
-  }
+
   ngOnInit() {
     $( document ).ready(function() {
       $(function () {
